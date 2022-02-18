@@ -2,7 +2,7 @@
 <html lang="nl">
 <head>
 <meta charset="UTF-8">
-	 <title>review beriekbaarheid</title>
+	 <title>review bereikbaarheid</title>
 	 <link rel="stylesheet" type="text/css" href="company.css">  
 </head>
 <body>
@@ -14,7 +14,7 @@
 	    ?>
 	</header>
     <main>
-        
+
     </main>
 </body>
 </html>
