@@ -17,9 +17,11 @@
  
 	<!-- op de home pagina wat enthousiaste tekst over het bedrijf en de producten -->
  	<main>	
+
 		 <section>
 <article class="article-index">
 		  <p class="p-index"> Welkom op de website van company. Wij vormen een jong en enthousiast bedrijf, 
+		  <p> Welkom op de website van company. Wij vormen een jong en enthousiast bedrijf, 
 			  waarmee wij u graag van dienst willen zijn met fantastische producten.</p> 
 		  <p>
 			  Om producten te kunnen bestellen, moet u zich registreren als klant. Dat kunt u 
