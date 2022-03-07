@@ -21,7 +21,7 @@
     require_once("dbconnmelm.php");
 
     // alle gegevens ophalen uit de tabel bier0
-    $query = $db->prepare("SELECT idpurchase, idpurchaseline, purchasedate, productid, quantiity, purchaseid, deliverydate, clientid FROM purchaseline AND purchase");
+    $query = $db->prepare("SELECT idpurchase, idpurchaseline, purchasedate, productid, quantity, purchaseid, deliverydate, clientid FROM purchaseline OR purchase");
     $query->execute();
     $resultq = $query->fetchAll(PDO::FETCH_ASSOC);
 
@@ -29,15 +29,23 @@
     echo "<thead><th>idpurchase</th>".
     "<th> idpurchaseline</th> ".
     "<th>purchasedate</th>".
-    "<th>productid</th>
-    </thead>";
+    "<th>productid</th>".
+    "<th>quantity</th>".
+    "<th>purchaseid</th>". 
+    "<th>deliverydate</th>". 
+    "<th>clientid</th></thead>";
     echo "<tbody>";
 
     // alle gegevens uit kroeg op het scherm tonen
     foreach ($resultq as $data) {
-        echo "<tr><td>".$data["prodname"]. "</td>";
-        echo "<td>".$data["proddesc"]. "</td>";
-        echo "<td>".$data["origincountry"]. "</td></tr>";
+        echo "<tr><td>".$data["idpurchase"]. "</td>";
+        echo "<td>".$data["idpurchaseline"]. "</td>";
+        echo "<td>".$data["purchasedate"]. "</td>";
+        echo "<td>".$data["productid"]. "</td>";
+        echo "<td>".$data["quantity"]. "</td>";
+        echo "<td>".$data["puchaseid"]. "</td>";
+        echo "<td>".$data["deliverydate"]. "</td>";
+        echo "<td>".$data["clientid"]. "</td> </tr>";
     }
     echo "</tbody>";
     echo "</table>";
