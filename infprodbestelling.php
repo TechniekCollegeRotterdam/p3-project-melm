@@ -21,7 +21,7 @@
     require_once("dbconnmelm.php");
 
     // alle gegevens ophalen uit de tabel bier0
-    $query = $db->prepare("SELECT idpurchase, idpurchaseline, purchasedate, productid, quantity, purchaseid, deliverydate, clientid FROM purchaseline OR purchase");
+    $query = $db->prepare("SELECT idpurchase, idpurchaseline, purchasedate, productid, quantity, purchaseid, deliverydate, clientid FROM purchaseline, purchase");
     $query->execute();
     $resultq = $query->fetchAll(PDO::FETCH_ASSOC);
 
@@ -43,7 +43,7 @@
         echo "<td>".$data["purchasedate"]. "</td>";
         echo "<td>".$data["productid"]. "</td>";
         echo "<td>".$data["quantity"]. "</td>";
-        echo "<td>".$data["puchaseid"]. "</td>";
+        echo "<td>".$data["purchaseid"]. "</td>";
         echo "<td>".$data["deliverydate"]. "</td>";
         echo "<td>".$data["clientid"]. "</td> </tr>";
     }
