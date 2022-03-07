@@ -14,11 +14,13 @@
 
 require_once("dbconnect.php");
 
-$query = $db-> prepare("SELECT idtype, prodname FROM `product`;");
+$query = $db-> prepare("SELECT idtype, name FROM `type`;");
 $query->execute();
 $resultq = $query->fetchALL(PDO::FETCH_ASSOC);
 foreach ($resultq as $data){
-    echo "productnaam: " . $data["prodname"];
+    echo"<br>";
+    echo"<br>";
+    echo "productnaam: " . $data["name"];
     echo"<br>";
     echo "categorie" . $data["idtype"];
     echo"<br>";

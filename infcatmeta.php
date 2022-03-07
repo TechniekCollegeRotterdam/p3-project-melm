@@ -14,11 +14,13 @@
 
 require_once("dbconnect.php");
 
-$query = $db-> prepare("SELECT prodname FROM `product` WHERE prodname LIKE '%A%';");
+$query = $db-> prepare("SELECT name FROM `type` WHERE name LIKE '%R%';");
 $query->execute();
 $resultq = $query->fetchALL(PDO::FETCH_ASSOC);
 foreach ($resultq as $data){
-    echo "namen met A: " . $data["prodname"];
+    echo"<br>";
+    echo"<br>";
+    echo "namen met R: " . $data["name"];
     echo"<br>";
     echo"<br>";
 
