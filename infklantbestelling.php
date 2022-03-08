@@ -3,7 +3,7 @@
 
     require_once("dbconnect.php");
 
-        $query = $db->prepare("SELECT idclient, surname, givenname FROM purchase INNER JOIN client");
+        $query = $db->prepare("SELECT idclient, surname, givenname FROM purchase INNER JOIN client ON idclient = clientid ");
         $query->execute();
         $resultq = $query->fetchAll(PDO::FETCH_ASSOC);
 
