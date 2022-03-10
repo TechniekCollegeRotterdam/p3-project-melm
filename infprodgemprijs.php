@@ -20,6 +20,8 @@
     // verbinding maken met de database bieren
     require_once("dbconnmelm.php");
 
+//moet nog gemiddelde prijzen laten zien
+
     // alle gegevens ophalen uit de tabel bier0
     $query = $db->prepare("SELECT prodname, idproduct, price FROM product");
     $query->execute();
