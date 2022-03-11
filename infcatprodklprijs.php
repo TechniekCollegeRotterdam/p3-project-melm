@@ -10,11 +10,11 @@
 <body>
 <?php
 
-//een overzicht van categorieën met producten beneden de 5 EUR
+//een overzicht van categorieën met producten beneden de 5 EUR.
 
 require_once("dbconnect.php");
 
-$query = $db-> prepare("SELECT idtype, prodname, price FROM `product` WHERE price < 5;");
+$query = $db-> prepare("SELECT idtype, prodname, price FROM `type` INNER JOIN `product` ON type.idtype = product.typeid WHERE price < 5;");
 $query->execute();
 $resultq = $query->fetchALL(PDO::FETCH_ASSOC);
 foreach ($resultq as $data){
@@ -25,7 +25,7 @@ foreach ($resultq as $data){
     echo"<br>";
     echo "prijs " . $data["price"];
     echo"<br>";
-    echo"<br>";
+
 }
     ?> 
 </body>

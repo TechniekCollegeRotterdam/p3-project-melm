@@ -24,7 +24,7 @@ foreach ($resultq as $data){
     echo"<br>";
     echo "categorie" . $data["idtype"];
     echo"<br>";
-    echo"<br>";
+
 
 }
     ?> 

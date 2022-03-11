@@ -14,7 +14,7 @@
 
 require_once("dbconnect.php");
 
-$query = $db-> prepare("SELECT idtype, AVG(price) FROM product GROUP BY idtype;");
+$query = $db-> prepare("SELECT idtype, AVG(price) FROM `type` INNER JOIN `product` ON type.idtype = product.typeid GROUP BY idtype;");
 $query->execute();
 $resultq = $query->fetchALL(PDO::FETCH_ASSOC);
 foreach ($resultq as $data){
@@ -24,7 +24,7 @@ foreach ($resultq as $data){
     echo"<br>";
     echo "gemiddelde prijs EUR " . $data["AVG(price)"];
     echo"<br>";
-    echo"<br>";
+ 
 
 }
     ?> 

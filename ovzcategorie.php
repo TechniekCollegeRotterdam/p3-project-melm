@@ -28,7 +28,7 @@
             krijgen.<br>
         <a href="infcatproduct.php">Categorie met product</a></p>
 
-        <p>Klik hieronder om een overzicht van categorieën met producten boven &euro; 100,-- 
+        <p>Klik hieronder om een overzicht van categorieën met producten boven &euro; 100,- 
             te krijgen.<br>
         <a href="infcatprodprijs.php">Categorie - prod &euro; 100</a></p>
 

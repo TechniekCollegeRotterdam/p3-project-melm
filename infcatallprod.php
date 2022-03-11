@@ -10,11 +10,11 @@
 <body>
 <?php
 
-//een overzicht van categorieën met ALLE bijbehorende producten 
+//een overzicht van categorieën met ALLE bijbehorende producten.
 
 require_once("dbconnect.php");
 
-$query = $db-> prepare("SELECT idtype, idproduct, prodname FROM `product` GROUP BY idproduct;");
+$query = $db-> prepare("SELECT idtype, idproduct, prodname FROM `type` INNER JOIN `product` ON type.idtype = product.typeid GROUP BY idproduct;");
 $query->execute();
 $resultq = $query->fetchALL(PDO::FETCH_ASSOC);
 foreach ($resultq as $data){
@@ -25,28 +25,8 @@ foreach ($resultq as $data){
     echo"<br>";
     echo "productnaam " . $data["prodname"];
     echo"<br>";
-    echo"<br>";
+  
 }
     ?> 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

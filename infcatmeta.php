@@ -22,7 +22,7 @@ foreach ($resultq as $data){
     echo"<br>";
     echo "namen met R: " . $data["name"];
     echo"<br>";
-    echo"<br>";
+
 
 }
     ?> 

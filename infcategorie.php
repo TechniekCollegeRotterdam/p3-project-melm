@@ -20,9 +20,9 @@ $resultq = $query->fetchALL(PDO::FETCH_ASSOC);
 foreach ($resultq as $data){
     echo"<br>";
     echo"<br>";
-    echo "categorie: " . $data["idtype"];
+    echo"categorie: " . $data["idtype"];
     echo"<br>";
-    echo"<br>";
+
 
 }
     ?> 
