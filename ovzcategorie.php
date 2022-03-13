@@ -20,9 +20,9 @@
         <p>Klik hieronder om een overzicht van alle categorieën van de producten te krijgen.<br>
         <a href="infcategorie.php">Overzicht categorieën</a></p>
 
-        <p>Klik hieronder om een overzicht van alle categorieën met een a in de 
+        <p>Klik hieronder om een overzicht van alle categorieën met een r in de 
            naam te krijgen.<br>
-        <a href="infcatmeta.php">Categorie met a</a></p>
+        <a href="infcatmeta.php">Categorie met r</a></p>
 
         <p>Klik hieronder om een overzicht van categorieën met bijbehorende producten te 
             krijgen.<br>

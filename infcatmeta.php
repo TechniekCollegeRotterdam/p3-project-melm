@@ -19,21 +19,22 @@
     <main>
 <?php
 
-//hieronder een overzicht van alle categorieën met een a in de naam
+//hieronder een overzicht van alle categorieën met een R in de naam
 
 require_once("dbconnect.php");
 
-$query = $db-> prepare("SELECT name FROM `type` WHERE name LIKE '%R%';");
+$query = $db-> prepare("SELECT idtype, name FROM `type` INNER JOIN `product` ON type.idtype = product.typeid  WHERE name LIKE '%R%';");
 $query->execute();
 $resultq = $query->fetchALL(PDO::FETCH_ASSOC);
 
 echo "<table>";
-echo "<thead><th>Namen met een R</th></thead>";
+echo "<thead><th>Namen met een R</th><th>categorie</th></thead>";
 echo "<tbody>";
 
 foreach ($resultq as $data){
     echo "<tr>";
     echo "<td>".$data["name"]."</td>";
+    echo "<td>".$data["idtype"]."</td>";
     echo "</tr>";
 
 }
