@@ -14,9 +14,7 @@
 	    ?>
 	</header>
     <main>
-        
-    </main>   
-     <?php
+       <?php
     // verbinding maken met de database bieren
     require_once("dbconnmelm.php");
 
@@ -33,12 +31,15 @@
 
     // alle gegevens uit kroeg op het scherm tonen
     foreach ($resultq as $data) {
-        echo "<tr><td>".$data["prodname"]. "</td>";
+        echo "<tr>".$data["prodname"]. "</td>";
         echo "<td>".$data["proddesc"]. "</td>";
-        echo "<td>".$data["origincountry"]. "</td></tr>";
+        echo "<td>".$data["origincountry"]. "</td>";
+        echo "</tr>";
     }
     echo "</tbody>";
     echo "</table>";
-    ?>
+    ?>      
+    </main>   
+
 </body>
 </html>

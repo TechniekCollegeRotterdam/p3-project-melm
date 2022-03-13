@@ -8,6 +8,15 @@
     <link rel="stylesheet" href="company.css">
 </head>
 <body>
+<header>
+		<h1>Company</h1>
+		<!-- hieronder wordt het menu opgehaald. -->
+		<?php
+			include "nav.html";
+		?>
+	</header>
+ 
+    <main>
 <?php
 
 //hieronder een overzicht van alle categorieën met een a in de naam
@@ -33,5 +42,6 @@ echo "</tbody>";
 echo "</table>";
 
     ?> 
+</main>    
 </body>
 </html>

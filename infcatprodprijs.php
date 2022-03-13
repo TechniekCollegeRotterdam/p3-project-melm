@@ -8,6 +8,15 @@
     <link rel="stylesheet" href="company.css">
 </head>
 <body>
+<header>
+		<h1>Company</h1>
+		<!-- hieronder wordt het menu opgehaald. -->
+		<?php
+			include "nav.html";
+		?>
+	</header>
+ 
+    <main>
 <?php
 
 // hieronder een overzicht van categorieën met bijbehorende producten boven 100 EUR
@@ -34,5 +43,6 @@ foreach ($resultq as $data){
 echo"</tbody>";
 echo"</table>";
     ?> 
+    </main>
 </body>
 </html>

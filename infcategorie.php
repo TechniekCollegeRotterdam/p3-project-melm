@@ -8,6 +8,16 @@
     <link rel="stylesheet" href="company.css">
 </head>
 <body>
+
+<header>
+		<h1>Company</h1>
+		<!-- hieronder wordt het menu opgehaald. -->
+		<?php
+			include "nav.html";
+		?>
+	</header>
+ 
+    <main>
 <?php
 
 //hieronder een overzicht van alle categorieën van de producten
@@ -33,5 +43,6 @@ foreach ($resultq as $data){
 
 
     ?> 
+   </main> 
 </body>
 </html>
