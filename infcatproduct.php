@@ -17,16 +17,20 @@ require_once("dbconnect.php");
 $query = $db-> prepare("SELECT idtype, name FROM `type`;");
 $query->execute();
 $resultq = $query->fetchALL(PDO::FETCH_ASSOC);
-foreach ($resultq as $data){
-    echo"<br>";
-    echo"<br>";
-    echo "productnaam: " . $data["name"];
-    echo"<br>";
-    echo "categorie" . $data["idtype"];
-    echo"<br>";
 
+echo"<table>";
+echo"<thead><th>productnaam</th><th>categorie</th><thead>";
+
+foreach ($resultq as $data){
+    echo"<tr>";
+    echo"<td>".$data["name"]."</td>";
+    echo"<td>".$data["idtype"]."</td>";
+    echo"</tr>";
 
 }
+
+echo"</tbody>";
+echo"</table>";
     ?> 
 </body>
 </html>

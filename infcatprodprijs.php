@@ -18,14 +18,21 @@ $query = $db-> prepare("SELECT idtype, name, price FROM `type` INNER JOIN `produ
 
 $query->execute();
 $resultq = $query->fetchALL(PDO::FETCH_ASSOC);
-foreach ($resultq as $data){
-    echo "prijs: " . $data["price"];
-    echo"<br>";
-    echo "categorie " . $data["idtype"];
-    echo"<br>";
- 
 
+echo"<table>";
+echo"<thead><th>prijs</th><th>categorie</th></thead>";
+echo"<tbody>";
+
+foreach ($resultq as $data){
+    echo"<tr>";
+    echo"<td>".$data["price"]."</td>";   
+    echo"<td>".$data["idtype"]."</td>";
+    echo"</tr>";
+ 
 }
+
+echo"</tbody>";
+echo"</table>";
     ?> 
 </body>
 </html>

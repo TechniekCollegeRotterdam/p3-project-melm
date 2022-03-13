@@ -17,14 +17,21 @@ require_once("dbconnect.php");
 $query = $db-> prepare("SELECT name FROM `type` WHERE name LIKE '%R%';");
 $query->execute();
 $resultq = $query->fetchALL(PDO::FETCH_ASSOC);
-foreach ($resultq as $data){
-    echo"<br>";
-    echo"<br>";
-    echo "namen met R: " . $data["name"];
-    echo"<br>";
 
+echo "<table>";
+echo "<thead><th>Namen met een R</th></thead>";
+echo "<tbody>";
+
+foreach ($resultq as $data){
+    echo "<tr>";
+    echo "<td>".$data["name"]."</td>";
+    echo "</tr>";
 
 }
+
+echo "</tbody>";
+echo "</table>";
+
     ?> 
 </body>
 </html>

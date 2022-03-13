@@ -17,14 +17,21 @@ require_once("dbconnect.php");
 $query = $db-> prepare("SELECT idtype FROM `type`;");
 $query->execute();
 $resultq = $query->fetchALL(PDO::FETCH_ASSOC);
-foreach ($resultq as $data){
-    echo"<br>";
-    echo"<br>";
-    echo"categorie: " . $data["idtype"];
-    echo"<br>";
 
+echo "<table>";
+echo "<thead><th>Categorie</th></thead>";
+echo "<tbody>";
+
+foreach ($resultq as $data){
+    echo "<tr>";
+    echo "<td>".$data["idtype"]."</td>";
+    echo "</tr>";
 
 }
+    echo"</tbody>";
+    echo"</table>";
+
+
     ?> 
 </body>
 </html>

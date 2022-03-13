@@ -17,16 +17,23 @@ require_once("dbconnect.php");
 $query = $db-> prepare("SELECT idtype, AVG(price) FROM `type` INNER JOIN `product` ON type.idtype = product.typeid GROUP BY idtype;");
 $query->execute();
 $resultq = $query->fetchALL(PDO::FETCH_ASSOC);
-foreach ($resultq as $data){
-    echo"<br>";
-    echo"<br>";      
-    echo "categorie: " . $data["idtype"];
-    echo"<br>";
-    echo "gemiddelde prijs EUR " . $data["AVG(price)"];
-    echo"<br>";
- 
 
+echo"<table>";
+echo"<thead><th>categorie</th><th>gemiddelde prijs</th></thead>";
+echo"<tbody>";
+
+
+foreach ($resultq as $data){
+    echo"<tr>";      
+    echo"<td>".$data["idtype"]."</td>";
+    echo"<td>".$data["AVG(price)"]."</td>";
+    echo"</tr>";
+ 
 }
+
+echo"</tbody>";
+echo"</table>";
+
     ?> 
 </body>
 </html>
