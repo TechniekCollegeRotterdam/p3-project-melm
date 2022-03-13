@@ -14,32 +14,32 @@
 	    ?>
 	</header>
     <main>
-
+        
     </main>   
      <?php
     // verbinding maken met de database bieren
     require_once("dbconnmelm.php");
-    
-    
-    // moet er nog ervoor zorgen dat het de laagste prijzen als eerste laat zien
-
 
     // alle gegevens ophalen uit de tabel bier0
-    $query = $db->prepare("SELECT prodname, idproduct, price FROM product");
+    $query = $db->prepare("SELECT prodname, idproduct, typeid, idtype, name FROM product, type");
     $query->execute();
     $resultq = $query->fetchAll(PDO::FETCH_ASSOC);
 
     echo "<table>";
     echo "<thead><th>prodname product</th>".
     "<th> idproduct </th> ".
-    "<th>price product</th></thead>";
+    "<th>typeid</th>". 
+    "<th> idtype </th>". 
+    "<th> name type </th></thead>";
     echo "<tbody>";
 
     // alle gegevens uit kroeg op het scherm tonen
     foreach ($resultq as $data) {
         echo "<tr><td>".$data["prodname"]. "</td>";
         echo "<td>".$data["idproduct"]. "</td>";
-        echo "<td>".$data["price"]. "</td></tr>";
+        echo "<td>".$data["typeid"]. "</td>";
+        echo "<td>".$data["idtype"]. "</td>";
+        echo "<td>".$data["name"]. "</td> </tr>";
     }
     echo "</tbody>";
     echo "</table>";
