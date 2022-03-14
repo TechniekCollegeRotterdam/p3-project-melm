@@ -104,13 +104,14 @@ color: aliceblue;
 /*Responsive layout mobile*/
 @media screen and (max-width: 385px) {
 
-.header-info{
-display: block;
+H1{
+	display: block;
 }
 
 
 .main-info{
-padding: 30px;
+padding: 15px;
+background-color: azure;
 }
 
 }
