@@ -8,21 +8,21 @@
     <link rel="stylesheet" href="company.css">
 </head>
 <body>
-<header>
+<header class="header-info">
 		<h1>Company</h1>
 		<!-- hieronder wordt het menu opgehaald. -->
 		<?php
 			include "nav.html";
 		?>
 	</header>
- <main>
+ <main class="main-info">
 <?php
 
 //een overzicht van categorieën met producten beneden de 5 EUR.
 
 require_once("dbconnect.php");
 
-$query = $db-> prepare("SELECT idtype, prodname, price FROM `type` INNER JOIN `product` ON type.idtype = product.typeid WHERE price < 5;");
+$query = $db-> prepare("SELECT idtype, prodname, price FROM `type` INNER JOIN `product` ON type.idtype = product.typeid WHERE price < 500;");
 $query->execute();
 $resultq = $query->fetchALL(PDO::FETCH_ASSOC);
 
@@ -31,11 +31,12 @@ echo"<thead><th>categorie</th><th>productnaam</th><th>prijs</th></thead>";
 echo"<tbody>";
 
 foreach ($resultq as $data){
-    echo"<tr>";    
-    echo"<td>".$data["idtype"]."</td>";
-    echo"<td>".$data["prodname"]."</td>";
-    echo"<td>".$data["price"]."</td>";
-    echo"</tr>";
+
+    echo "<tr>";    
+    echo "<td>".$data["idtype"]."</td>";
+    echo "<td>".$data["prodname"]."</td>";
+    echo "<td>".$data["price"]."</td>";
+    echo "</tr>";
 
 }
 
@@ -45,4 +46,3 @@ echo"</table>";
      </main>
 </body>
 </html>
-

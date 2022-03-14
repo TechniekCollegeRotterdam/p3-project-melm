@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="company.css">
 </head>
 <body>
-<header>
+<header class="header-info">
 		<h1>Company</h1>
 		<!-- hieronder wordt het menu opgehaald. -->
 		<?php
@@ -16,7 +16,7 @@
 		?>
 	</header>
  
-    <main>
+    <main class="main-info">
 <?php
 
 //hieronder een overzicht van alle categorieën met een R in de naam

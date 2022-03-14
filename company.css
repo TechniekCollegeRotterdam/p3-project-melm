@@ -31,7 +31,7 @@ header{
 	padding: 10px;
 }
 
-main{
+.main-info{
 	width: 90%;
 	margin: 40px auto;
 }
@@ -39,6 +39,7 @@ main{
 main p {
 	margin: 15px auto;
 	font-size: 150%;
+	
 	
 
 }
@@ -90,5 +91,27 @@ nav ul li:hover ul li {
 
 .article-index{
 color: aliceblue;
+}
+
+/*Esra info-vragen*/
+
+.main-info{
+	display: flex;
+       flex-wrap: wrap;
+	justify-content: flex-start;
+}
+
+/*Responsive layout mobile*/
+@media screen and (max-width: 385px) {
+
+.header-info{
+display: block;
+}
+
+
+.main-info{
+padding: 30px;
+}
+
 }
 
