@@ -24,14 +24,14 @@
 
 
     // alle gegevens ophalen uit de tabel bier0
-    $query = $db->prepare("SELECT idpurchase, paidamount, paidinfulldate, deliverydate, clientid FROM purchase");
+    $query = $db->prepare("SELECT idpurchase, paidamount, clientid FROM purchase"); //paidinfulldate, deliverydate,
     $query->execute();
     $resultq = $query->fetchAll(PDO::FETCH_ASSOC);
 
     echo "<table>";
     echo "<thead><th>idpurchase</th>".
-    "<th> paidamount</th> ".
-    "<th>Paidinfulldate</th>".
+    //"<th> paidamount</th> ".
+    //"<th>Paidinfulldate</th>".
     "<th>deliverydate</th>".
     "<th>clientid</th></thead>";
     echo "<tbody>";
@@ -39,8 +39,8 @@
     // alle gegevens uit kroeg op het scherm tonen
     foreach ($resultq as $data) {
         echo "<tr><td>".$data["idpurchase"]. "</td>";
-        echo "<td>".$data["paidamount"]. "</td>";
-        echo "<td>".$data["paidinfulldate"]. "</td>";
+        //echo "<td>".$data["paidamount"]. "</td>";
+        //echo "<td>".$data["paidinfulldate"]. "</td>";
         echo "<td>".$data["deliverydate"]. "</td>";
         echo "<td>".$data["clientid"]. "</td> </tr>";
     }
