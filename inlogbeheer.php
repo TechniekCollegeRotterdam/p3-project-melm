@@ -10,25 +10,46 @@
 		<h1>Company</h1>
     
 	    <?php
-	    	include "nav.html";
+		    include "nav.html";
+		
+		    if (isset($_SESSION['login'])){
+            echo 'welkom';
+			}else{
+            echo 'login';
+			if (isset($_POST['submit'])){
+                $melm = mysqli_query($MySql, "SELECT * FROM 'client'")
+				$admin = musqli_num_rows($melm);
+
+				if ($admin == admin) {
+                 while ($sqlData = mysqli_fetch_assoc($melm)){
+
+					$_SEESION['login'] = $sqlData['gebruikersnaam']
+				 }else{echo 'sorry not found'}
+				}
+			}
+			?>
+			<form method="post" action="#">
+            <table width="100%" cellspacing="5" cellpadding="0">
+            <tr>
+				<td width="100">Email</td>
+				<td><input type="text" name="user" size="25" required="required" /> </td>
+			</tr>
+			<tr>
+				<td>wachtwoord</td>
+				<td><input type="password" name="pass" size="15" required="required" /></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td input type="submit" name="submit" value="login" /></td>
+			</tr>
+			</table></form>
+			<?php
+			}
+		        
 	    ?>
 	</header>
     <main>
-	<section class="section">
-        <article class="article">
-          <form action="#" method="#">
-            <ul>
-              <li>
-                <label for="Email">Email</label>
-                <input id="Email" type="Email" name="Email" placeholder="Email" autofocus>
-              </li>
-              <li>
-                <label for="password">Password </label>
-                <input id="password" type="password" name="password" placeholder="password">
-              </li>
-			  <input type="submit" value="log in">
-</article>
-</section>
+	
 </main>
 </body>
 </html>
