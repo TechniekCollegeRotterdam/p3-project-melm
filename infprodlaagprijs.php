@@ -25,7 +25,7 @@
 
 
     // alle gegevens ophalen uit de tabel bier0
-    $query = $db->prepare("SELECT prodname, idproduct, price FROM product");
+    $query = $db->prepare("SELECT prodname, idproduct, price FROM product ORDER BY price");
     $query->execute();
     $resultq = $query->fetchAll(PDO::FETCH_ASSOC);
 
