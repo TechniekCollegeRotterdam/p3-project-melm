@@ -10,42 +10,56 @@
 
 <body>
        <header>
+              <h1 class="Registratie">Registratie</h1>
+              <?php
+	
+	    require_once "dbconnect.php";
+           $query = $db->prepare("SELECT * FROM country");
+           $query->execute();
+           $result=$query->fetchAll(PDO::FETCH_ASSOC);
 
+           ?>
        </header>
        <main>
 
 
-              <h1 class="Registratie">Registratie</h1>
 
 
-              <form class="registratie" id="registratie">
+              <form method="POST" class="registratie" id="registratie" action="registratie.php">
 
                      <section class="registratie-section">
-                            <label name="id">Id klant *</label>
-                            <input type="text" placeholder="John">
+
+                            <input type="text" name="idClient" class="form-control"
+                                   placeholder="Klantnummer wordt automatisch bepaald" disabled>
+
+
                             <br>
                             <label name="name"> Achternaam *</label>
                             <input type="text" placeholder="Doe">
+
 
                             <br>
                             <label name="naam">Voornaam *</label>
                             <input type="text" placeholder="Jack">
 
+
                             <br>
                             <label name="naam">Tweede naam *</label>
                             <input type="text" placeholder="Tom">
 
+
                             <br>
                             <label name="titel">Titel *</label>
                             <br>
-                            <label name="titel">Mr *</label>
+                            <label name="titel">Mr </label>
                             <input type="radio" placeholder="mr">
                             <br>
-                            <label name="titel">Mrs *</label>                            
+                            <label name="titel">Mrs </label>
                             <input type="radio" placeholder="mrs">
                             <br>
-                            <label name="titel">Ms *</label>
+                            <label name="titel">Ms </label>
                             <input type="radio" placeholder="ms">
+
 
                             <br>
                             <label name="Geslacht">Geslacht *</label>
@@ -56,53 +70,67 @@
                             <label name="gender">Vrouw </label>
                             <input type="radio" placeholder="geslacht">
 
+
                             <br>
                             <label name="straatnaam">Straatnaam *</label>
                             <input type="text" placeholder="Hooghweg">
+
 
                             <br>
                             <label name="stad">Stad *</label>
                             <input type="text" placeholder="Rotterdam">
 
+
                             <br>
                             <label name="postcode">Postcode *</label>
                             <input type="text" placeholder="3030AA">
 
-                            <br>
-                            <label name="landnummer">Land nummer *</label>
-                            <input type="text" placeholder="157">
 
                             <br>
-                            <label name="email">Email *</label>
-                            <input type="mail" placeholder="email@gmail.com">
+                            <label name="land">Selecteer uw land *</label>
+                            <select class="land" id="country" name="country" required>
+                                   <?php
+foreach($result as $rij)
+{
 
-                            <br>
-                            <label name="tel">Telefoonnummer *</label>
-                            <input type="tel" placeholder="06 99 88 77 66">
+echo '<option value="'. $rij['idcountry'].'">';
+echo  $rij['code'].' - '.$rij['name'];
+echo '<option/>';
+}
 
-                            <br>
-                            <label name="birhtday">Geboortedatum *</label>
-                            <input type="date" placeholder="date">
+?>
+                            </select>
+                            
 
-                            <br>
-                            <label name="beroep">Beroep *</label>
-                            <input type="text" placeholder="beroep">
+                                   <br>
+                                   <label name="email">Email *</label>
+                                   <input type="text" placeholder="email@gmail.com">
+
+
+                                   <br>
+                                   <label name="tel">Telefoonnummer *</label>
+                                   <input type="tel" placeholder="06 99 88 77 66">
+
+
+                                   <br>
+                                   <label name="birhtday">Geboortedatum *</label>
+                                   <input type="date" placeholder="date">
+
+
+                                   <br>
+                                   <label name="beroep">Beroep *</label>
+                                   <input type="text" placeholder="beroep">
+
+
+
 
 
 
                      </section>
-
                      <section class="submit-reset">
-                            <input type="submit" name="submit" value="submit">
-                            <input type="reset" name="reset" value="reset">
+                            <input type="submit" name="verzenden" value="account aanmaken">
+                            <input type="reset" name="herstel" value="opnieuw invullen">
                      </section>
-
-
-
-
-
-
-
 
 
 

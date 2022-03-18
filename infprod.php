@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 	 <title>Info Producten</title>
-	 <link rel="stylesheet" type="text/css" href="company.css">  
+	 <link rel="stylesheet" type="text/css" href="company.scss">  
 </head>
 <body>
 <header>
