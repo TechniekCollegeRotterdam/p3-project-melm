@@ -17,13 +17,13 @@
 			}else{
             echo 'login';
 			if (isset($_POST['submit'])){
-                $melm = mysqli_query($MySql, "SELECT * FROM 'client'")
-				$admin = musqli_num_rows($melm);
+                $sqlUitlezen = mysqli_query($MySQL, "SELECT * FROM 'client'")
+				$sqlAantal = musqli_num_rows($sqlUitlezen);
 
-				if ($admin == admin) {
-                 while ($sqlData = mysqli_fetch_assoc($melm)){
+				if ($sqlAantal == 0) {
+                 while ($sqlData = mysqli_fetch_assoc($sqlUitlezen)){
 
-					$_SEESION['login'] = $sqlData['gebruikersnaam']
+					$_SEESION['login'] = $sqlData['gebruikerNaam']
 				 }else{echo 'sorry not found'}
 				}
 			}
@@ -39,7 +39,7 @@
 				<td><input type="password" name="pass" size="15" required="required" /></td>
 			</tr>
 			<tr>
-				<td>&nbsp;</td>
+            		<td>&nbsp;</td>
 				<td input type="submit" name="submit" value="login" /></td>
 			</tr>
 			</table></form>
@@ -53,9 +53,3 @@
 </main>
 </body>
 </html>
-// wat er in komt 
-// invoer email 
-// invoer wachtwoord
-// als dat klopt
-// wordt er in database gekeken of die persoon beheerder is 
-// als persoon dat is wordt je ingelogged 
