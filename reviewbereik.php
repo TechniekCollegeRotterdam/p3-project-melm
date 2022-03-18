@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 	 <title>review bereikbaarheid</title>
-	 <link rel="stylesheet" type="text/css" href="company.scss">  
+	 <link rel="stylesheet" type="text/css" href="company.css">  
 </head>
 <body>
 <header>
