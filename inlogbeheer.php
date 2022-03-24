@@ -21,7 +21,7 @@ include "nav.html";
 ?>
     	</header>
     	<main>
-    		<?php
+		<?php
 require_once 'dbconnmelm.php';
 if (isset($_POST['login'])) {
 	try {
@@ -61,7 +61,7 @@ if (isset($_POST['login'])) {
 		}
 	}
 }
-?>
+?>	
 <fieldset>;
 	<label for = 'emailaddress'>Email</label>;
 				<input type='email' name='emailAddress' class='form-control' placeholder='Email' required>;
@@ -74,7 +74,6 @@ if (isset($_POST['login'])) {
 				<fieldset>;
 				<button class='btn btn-md btn-primary btn-block' type='login' name='inloggen'>Log in</button>;
 				</fieldset>;
-
 </main>
 </body>
 </html>
