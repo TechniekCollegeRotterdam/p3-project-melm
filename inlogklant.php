@@ -1,24 +1,58 @@
-<?php
-//
-   $firstName = $_POST['firstName'];
-   $lastName = $_POST['lastName'];
-   $gender = $_POST['gender'];
-   $email = $_POST['email'];
-   $password = $_POST['password'];
-   $number = $_POST['number'];
+<!DOCTYPE html>
+<html>
 
-   // Database connection
-   $conn = new mysqli('localhost','root','','test');
-   if($conn->connect_error){
-       echo "$conn->connect_error";
-       die("Connection Failed : ". $conn->connect_error);
-   } else {
-       $stmt = $conn->prepare("insert into registration(firstName, lastName, gender, email, password, number) values(?, ?, ?, ?, ?, ?)");
-       $stmt->bind_param("sssssi", $firstName, $lastName, $gender, $email, $password, $number);
-       $execval = $stmt->execute();
-       echo $execval;
-       echo "Registration successfully...";
-       $stmt->close();
-       $conn->close();
-   }
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css%22%3E
+    <link rel="stylesheet" href="company.css">
+</head>
+<header>
+
+    <?php include "nav.html";?>
+
+</header>
+
+<body>
+   
+<?php
+
+require_once 'dbconnect.php';
+    if(isset($_POST['login']));
+   
+    try{
+        $sQuery = "SELECT * FROM client WHERE clientid = :clientid";
+        $oStmt = $db->prepare($sQuery);
+        $oStmt->bindValue (parameter: ':clientid', $_POST['klnr']);
+        $oStmt->execute();
+        if($oStmt->rowCount()==1);
+    }
+    $rij = $oStmt->fetch(fetch_style:PDO::FETCH_ASSOC);
+    if(password_verify($_POST['klww'],$rij['password']));
+
+
+    $_SESSION ['clientid'] =$rij['clientid'];
+    $_SESSION ['voornaam'] =$rij ['voornaam'];
+    $_SESSION ['achternaam'] =$rij ['achternaam'];
+    if($rij['beheer']=="j");
+    {
+        $_SESSION['blogin']=true;
+        header(string:'Refresh: 3; url=index.php');
+        echo "Login succesvol";
+    }
+    
+    else 
+    {
+        
+        $_SESSION['login']= true;
+        header(string: 'Refresh: 3; url=mijnpagina.php');
+        echo "login succesvol";
+
+
+    } 
 ?>
+
+
+</body>
+
+</html>

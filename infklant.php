@@ -1,39 +1,46 @@
 <!DOCTYPE html>
 <html lang="nl">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Info</title>
+    <link rel="stylesheet" type="text/css" href="company.css">  
+    <title>Alle klanten</title>
 </head>
-
 <body>
+    <header>
+		<h1>Company</h1>
+	    <!-- hieronder wordt het menu opgehaald. -->
+	    <?php
+		    include "nav.html";
+	    ?>
+	</header>
+
+    <main>
     <?php
-    include "nav.html";
-    
-    //leg verbinding met de database
+        // Verbinding maken met de database 
         require_once("dbconnect.php");
 
-        $query = $db->prepare("SELECT idclient, surname, givenname FROM client");
+        // Geselecteerde gegevens ophalen uit de tabel client
+        $query = $db->prepare("SELECT givenname, surname, city, birthday FROM client");
         $query->execute();
         $resultq = $query->fetchAll(PDO::FETCH_ASSOC);
 
-        echo "<table border='1' width='800' cellspacing='0'>";
-        echo "<thead><th>IdClient</th><th>Surname</th><th>Givenname</th></thead>";
+        echo "<table>";
+        echo "<thead><th>Voornaam</th><th>Achternaam</th><th>Woonplaats</th><th>Geboortedatum</th></thead>";
         echo "<tbody>";
 
+        // Alle gegevens uit client op het scherm tonen
         foreach ($resultq as $data) {
             echo "<tr>";
-            echo "<td>".$data["idclient"]."</td>";
-            echo "<td>".$data["surname"]."</td>";
             echo "<td>".$data["givenname"]."</td>";
+            echo "<td>".$data["surname"]."</td>";
+            echo "<td>".$data["city"]."</td>";
+            echo "<td>".$data["birthday"]."</td>";
             echo "</tr>";
         }
-
         echo "</tbody>";
         echo "</table>";
-
     ?>
+    </main>
 </body>
-
 </html>

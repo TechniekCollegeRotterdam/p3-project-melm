@@ -1,29 +1,47 @@
-<?php
-    
-    include "nav.html";
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="company.css">  
+    <title>Klant zonder bestellingen</title>
+</head>
+<body>
+    <header>
+		<h1>Company</h1>
+	    <!-- hieronder wordt het menu opgehaald. -->
+	    <?php
+		    include "nav.html";
+	    ?>
+	</header>
+ 
+    <main>
+    <?php
+        // Verbinding maken met de database 
+        require_once("dbconnect.php");
 
-    require_once("dbconnect.php");
+        // Geselecteerde gegevens ophalen uit de tabel client zonder bestellingen
+        $query = $db->prepare("SELECT idclient, surname, birthday, city 
+                        FROM client WHERE idclient NOT IN (SELECT DISTINCT clientid FROM purchase)");
+        $query->execute();
+        $resultq = $query->fetchAll(PDO::FETCH_ASSOC);
 
-    $query = $db->prepare("SELECT idclient, surname, givenname FROM client WHERE idclient NOT IN (SELECT clientid FROM purchase)");
-    $query->execute();
-    $resultq = $query->fetchAll(PDO::FETCH_ASSOC);
+        echo "<table>";
+        echo "<thead><th>Klantnummer</th><th>Achternaam</th><th>Geboortedatum</th><th>Woonplaats</th></thead>";
+        echo "<tbody>";
 
-    echo "<table border='1' width='800' cellspacing='0'>";
-    echo "<thead><th>IdClient</th><th>Surname</th><th>Givenname</th></thead>";
-    echo "<tbody>";
-
-
-    foreach ($resultq as $data) {
-        echo "<tr>";
-        echo "<td>".$data["idclient"]."</td>";
-        echo "<td>".$data["surname"]."</td>";
-        echo "<td>".$data["givenname"]."</td>";
-        echo "</tr>";
-    }
-
-    echo "</tbody>";
-    echo "</table>";
-
-
-
-?>
+        // Alle gegevens uit client op het scherm tonen
+        foreach ($resultq as $data) {
+            echo "<tr>";
+            echo "<td>".$data["idclient"]."</td>";
+            echo "<td>".$data["surname"]."</td>";
+            echo "<td>".$data["birthday"]."</td>";
+            echo "<td>".$data["city"]."</td>";
+            echo "</tr>";
+        }
+        echo "</tbody>";
+        echo "</table>";
+    ?>
+    </main>
+</body>
+</html>
