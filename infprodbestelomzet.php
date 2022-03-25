@@ -1,15 +1,3 @@
-<?php
-session_start();
-require 'admincheck.php';
-require 'dbconnmelm.php';
-?>
-<?php 
-if(!isset($_SESSION['blogin']) || $_SESSION['blogin'] == false)
-{
-    header(string:'location: inlogbeheer.php');
-    exit();
-}
-?>
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -30,7 +18,14 @@ if(!isset($_SESSION['blogin']) || $_SESSION['blogin'] == false)
     </main>   
      <?php
     // verbinding maken met de database bieren
-    require_once("dbconnmelm.php");
+require 'dbconnmelm.php';
+
+//if(!isset($_SESSION['blogin']) || $_SESSION['blogin'] == false)
+//{
+  //  header(string:'location: inlogbeheer.php');
+    //exit();
+//}
+
 
     // alle gegevens ophalen uit de tabel bier0
     $query = $db->prepare("SELECT idpurchaseline, productid, quantity, pricecharged, purchaseid FROM purchaseline");

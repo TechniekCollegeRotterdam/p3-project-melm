@@ -1,15 +1,3 @@
-<?php
-session_start();
-require 'admincheck.php';
-require 'dbconnmelm.php';
-?>
-<?php 
-if(!isset($_SESSION['blogin']) || $_SESSION['blogin'] == false)
-{
-    header(string:'location: inlogbeheer.php');
-    exit();
-}
-?>
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -31,6 +19,12 @@ if(!isset($_SESSION['blogin']) || $_SESSION['blogin'] == false)
      <?php
     // verbinding maken met de database bieren
     require_once("dbconnmelm.php");
+//if(!isset($_SESSION['blogin']) || $_SESSION['blogin'] == false)
+//{
+  //  header(string:'location: inlogbeheer.php');
+    //exit();
+//}
+
 
 // moet nog laten zien producten zonder bestellinge
 

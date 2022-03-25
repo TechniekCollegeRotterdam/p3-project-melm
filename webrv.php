@@ -20,10 +20,10 @@
                 <ul>
                     <li>
                         <label for="text">username</label>
-                        <input id="text" type="text" name="Acthernaam" autofocus>
+                        <input id="text" type="text" name="naam" autofocus required>;
                     <li>
                         <label for="email">email</label>
-                        <input id="email" type="email" name="email">
+                        <input id="email" type="email" name="email" required>;
 </li>
                     <br>
                     <li>
