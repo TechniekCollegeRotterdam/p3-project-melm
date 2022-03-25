@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 	 <title>Info Producten</title>
-	 <link rel="stylesheet" type="text/css" href="company.css">  
+	 <link rel="stylesheet" type="text/css" href="company.scss">  
 </head>
 <body>
 <header>
@@ -14,9 +14,7 @@
 	    ?>
 	</header>
     <main>
-        
-    </main>   
-     <?php
+       <?php
     // verbinding maken met de database bieren
     require_once("dbconnmelm.php");
 
@@ -34,13 +32,19 @@
 
     // alle gegevens uit kroeg op het scherm tonen
     foreach ($resultq as $data) {
-        echo "<tr><td>".$data["prodname"]. "</td>";
+        echo "<tr>".$data["prodname"]. "</td>";
         echo "<td>".$data["proddesc"]. "</td>";
         echo "<td>".$data["origincountry"]. "</td>";
+<<<<<<< HEAD
+        echo "</tr>";
+=======
         echo "<td>".$data["price"]. "</td></tr>";
+>>>>>>> 0452e7a06197b17514cabf9ae5b751685b099ff5
     }
     echo "</tbody>";
     echo "</table>";
-    ?>
+    ?>      
+    </main>   
+
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
 	 <meta charset="UTF-8">
 	 <title>Company</title>
-	 <link rel="stylesheet" type="text/css" href="company.css">  
+	 <link rel="stylesheet" type="text/css" href="company.scss">  
 </head>
 
 <body>  
@@ -17,13 +17,11 @@
  
 	<!-- op de home pagina wat enthousiaste tekst over het bedrijf en de producten -->
  	<main>	
-		  <img class="centreer" src='background.jpg' alt="main page image" width="1000px" height="500px"> 
-		  <p> Welkom op de website van company. Wij vormen een jong en enthousiast bedrijf, 
 
 		 <section>
 <article class="article-index">
 		  <p class="p-index"> Welkom op de website van company. Wij vormen een jong en enthousiast bedrijf, 
-
+		  <p> Welkom op de website van company. Wij vormen een jong en enthousiast bedrijf, 
 			  waarmee wij u graag van dienst willen zijn met fantastische producten.</p> 
 		  <p>
 			  Om producten te kunnen bestellen, moet u zich registreren als klant. Dat kunt u 

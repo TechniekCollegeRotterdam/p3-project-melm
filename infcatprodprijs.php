@@ -5,26 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="company.css">
+    <link rel="stylesheet" href="company.scss">
 </head>
 <body>
+<header class="header-info">
+		<h1>Company</h1>
+		<!-- hieronder wordt het menu opgehaald. -->
+		<?php
+			include "nav.html";
+		?>
+	</header>
+ 
+    <main class="main-info">
 <?php
 
 // hieronder een overzicht van categorieën met bijbehorende producten boven 100 EUR
 
 require_once("dbconnect.php");
 
-$query = $db-> prepare("SELECT idpurchase, pricecharged FROM `purchaseline` WHERE pricecharged > '100.00';");
+$query = $db-> prepare("SELECT idtype, name, price FROM `type` INNER JOIN `product` ON type.idtype = product.typeid WHERE price > '100';");
+
 $query->execute();
 $resultq = $query->fetchALL(PDO::FETCH_ASSOC);
-foreach ($resultq as $data){
-    echo "prijs: " . $data["pricecharged"];
-    echo"<br>";
-    echo "categorie " . $data["idpurchase"];
-    echo"<br>";
-    echo"<br>";
 
+echo"<table>";
+echo"<thead><th>prijs</th><th>categorie</th></thead>";
+echo"<tbody>";
+
+foreach ($resultq as $data){
+    echo"<tr>";
+    echo"<td>".$data["price"]."</td>";   
+    echo"<td>".$data["idtype"]."</td>";
+    echo"</tr>";
+ 
 }
+
+echo"</tbody>";
+echo"</table>";
     ?> 
+    </main>
 </body>
 </html>

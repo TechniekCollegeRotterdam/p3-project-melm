@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 	 <title>Product gemid prijs</title>
-	 <link rel="stylesheet" type="text/css" href="company.css">  
+	 <link rel="stylesheet" type="text/css" href="company.scss">  
 </head>
 <body>
 <header>

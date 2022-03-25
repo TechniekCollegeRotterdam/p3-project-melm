@@ -3,7 +3,7 @@
 <head>
 	 <meta charset="UTF-8">
 	 <title>Company</title>
-	 <link rel="stylesheet" type="text/css" href="company.css">  
+	 <link rel="stylesheet" type="text/css" href="company.scss">  
 </head>
 
 <body>  
@@ -20,15 +20,15 @@
         <p>Klik hieronder om een overzicht van alle categorieën van de producten te krijgen.<br>
         <a href="infcategorie.php">Overzicht categorieën</a></p>
 
-        <p>Klik hieronder om een overzicht van alle categorieën met een a in de 
+        <p>Klik hieronder om een overzicht van alle categorieën met een r in de 
            naam te krijgen.<br>
-        <a href="infcatmeta.php">Categorie met a</a></p>
+        <a href="infcatmeta.php">Categorie met r</a></p>
 
         <p>Klik hieronder om een overzicht van categorieën met bijbehorende producten te 
             krijgen.<br>
         <a href="infcatproduct.php">Categorie met product</a></p>
 
-        <p>Klik hieronder om een overzicht van categorieën met producten boven &euro; 100,-- 
+        <p>Klik hieronder om een overzicht van categorieën met producten boven &euro; 100,- 
             te krijgen.<br>
         <a href="infcatprodprijs.php">Categorie - prod &euro; 100</a></p>
 
