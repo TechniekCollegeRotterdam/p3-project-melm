@@ -71,7 +71,7 @@ try{
 
 $query = $db->prepare("INSERT INTO client (surname , givenname, middleinitials, title, gender, streetadress, city, zipcode, countryid, emailadress, telephonenumber, birthday,
 occupation")
-VALUES (:))
+VALUES (:)
 
 
 
