@@ -17,7 +17,7 @@
 if(isset($_POST["account aanmaken"]))
 {
 
-       $errorVrij = false; 
+       $errorVrij = false
 echo "Helaas, registratie is niet gelukt.";
 echo "U zult eerst al (uw) gegevens moeten invullen.";
 
