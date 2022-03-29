@@ -16,9 +16,18 @@
     <main>
         
     </main>   
-     <?php
+    
     // verbinding maken met de database bieren
-    require_once("dbconnmelm.php");
+    <?php
+session_start();
+require 'dbconnmelm.php';
+ 
+//if(!isset($_SESSION['blogin']) || $_SESSION['blogin'] == false)
+//{
+//    header(string:'location: inlogbeheer.php');
+//    exit();
+//}
+
 
     // alle gegevens ophalen uit de tabel bier0
     $query = $db->prepare("SELECT idpurchase, idpurchaseline, purchasedate, productid, quantity, purchaseid, deliverydate, clientid FROM purchaseline, purchase");

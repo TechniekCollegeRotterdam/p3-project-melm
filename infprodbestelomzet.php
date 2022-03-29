@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="nl">
 <head>
 <meta charset="UTF-8">
@@ -18,7 +18,14 @@
     </main>   
      <?php
     // verbinding maken met de database bieren
-    require_once("dbconnmelm.php");
+require 'dbconnmelm.php';
+
+//if(!isset($_SESSION['blogin']) || $_SESSION['blogin'] == false)
+//{
+  //  header(string:'location: inlogbeheer.php');
+    //exit();
+//}
+
 
     // alle gegevens ophalen uit de tabel bier0
     $query = $db->prepare("SELECT idpurchaseline, productid, quantity, pricecharged, purchaseid FROM purchaseline");
