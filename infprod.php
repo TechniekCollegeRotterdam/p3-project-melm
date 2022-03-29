@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -44,3 +45,11 @@
 
 </body>
 </html>
+=======
+<?php
+    echo "<h1>Redirecting request</h1>";
+	header('Refresh: 1; url=nogniet.php');	
+    exit(); 
+
+?>
+>>>>>>> 5561c4d8fb66d8dc80603e8a1f2a6c8fae97a05d
