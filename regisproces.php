@@ -1,92 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
        <meta charset="UTF-8">
        <meta http-equiv="X-UA-Compatible" content="IE=edge">
        <meta name="viewport" content="width=device-width, initial-scale=1.0">
        <title>Document</title>
 </head>
+
 <body>
-       
-<?php
-$errorFree = true;
-echo "<br><main>";
-if(! isset($_POST["registratie"])) 
+       <?php
+       $errorVrij = true;
+      echo "<br><main>";
+
+
+if(isset($_POST["account aanmaken"]))
 {
 
-$errorFree = false;
-echo"<div class= 'container'>";
-echo"<div class= 'panel panel-primary'>";
-echo"<div class= 'panel-heading'>Helaas, registratie is niet gelukt</div>";
-echo"<div class= 'panel-body'>U zult eerst (al) uw gegevens moeten invullen</div>";
-echo"</div>";
-echo"</div>";
+       $errorVrij = false;
+echo "Helaas, registratie is niet gelukt.";
+echo "U zult eerst al (uw) gegevens moeten invullen.";
 
-exit();
+ exit();
 
 }
 
 
-if($errorFree && $_POST['passwrd1']!==$_POST['passwrd2'])
+if($errorVrij && $_POST['passwrd1']!==$_POST['passwrd2'])
 {
 
-$errorFree = false;
-echo"<div class='conatiner'>";
-echo"<div class='panel panel-primary'>";
-echo"<div class='panel-heading'>Helaas, registratie is niet gelukt</div>";
-echo"<div class='panel-body'>De beide wachtwoorden moeten aan elkaar gelijk zijn</div>";
-echo"</div>";
-echo"</div>";
+$errorVrij = false;
+echo "Helaas, registratie is niet gelukt.";
+echo "De beide wachtwoorden moeten aan elkaar gelijk zijn.";
+
 }
 
-
-if($errorFree)
+if($errorVrij)
 {
+        require_once "dbconnect.php";
+        $eml = filter_var($_POST["email"], FILTER_SANITIZE_STRING);
+        $query = $db->prepare("SELECT * FROM client WHERE email = :eml");
+        $query->bindValue(':eml', $eml);
+        $query->execute();
+        if($query->rowCount()<>0);
+        {
+               $errorVrij = false;
 
-require_once "db.connect.php";
-$eml = filter_var($_POST["emailAdress"], FILTER_SANITIZE_STRING);
-$query = $db->prepare("SELECT * FROM client WHERE emailadress = :eml");
-$query->bindValue(':eml', $eml);
-$query->execute();
-if($query->rowCount()<>0)
-
-{
-$errorFree = false;
-echo"<div class='conatainer'>";
-echo"<div class='panel panel-primary'>";
-echo"<div class='panel heading'>Helaas, registratie is niet gelukt</div>";
-echo"<div class='panel-body'>Het gekozen email-adres is al in gebruik</div>";
-echo"</div>";
-echo"</div>";
+        }
 }
-}
+echo "Helaas, registratie is niet gelukt.";
+echo "Het gekozen email-adres is al in gebruik.";
 
 
-
-
-if($errorFree)
-
-try
+if($errorVrij)
 {
 
-$gn = filter_var($_POST["givenName"], FILTER_SANITIZE_STRING);
-$sn = filter_var($_POST["surname"], FILTER_SANITIZE_STRING);
-$intitl = filter_var($_POST["midInitials"], FILTER_SANITIZE_STRING);
-$ttl = filter_var($_POST["title"], FILTER_SANITIZE_STRING);
+try{
+       $gn = filter_var($_POST["naam"], FILTER_SANITIZE_STRING);
+       $sn = filter_var($_POST["name"], FILTER_SANITIZE_STRING);
+       $initl = filter_var($_POST["naamm"], FILTER_SANITIZE_STRING);
+       $ttl = filter_var($_POST["titel"], FILTER_SANITIZE_STRING);
+       $stradr = filter_var($_POST["straatnaam"], FILTER_SANITIZE_STRING);
+       $cty = filter_var($_POST["stad"], FILTER_SANITIZE_STRING);
+       $zip = filter_var($_POST["postcode"], FILTER_SANITIZE_STRING);
+       $phone = filter_var($_POST["tel"], FILTER_SANITIZE_STRING);
+       $occ = filter_var($_POST["beroep"], FILTER_SANITIZE_STRING);
 
-$stradr = filter_var($_POST["streetadress"], FILTER_SANITIZE_STRING);
-$zip = filter_var($_POST["zipcode"], FILTER_SANITIZE_STRING);
+       $pw=password_hash($_POST['passwrd1'], PASSWORD_DEFAULT);
 
 
-$phone = filter_var($_POST["phonenr"], FILTER_SANITIZE_STRING);
+$query = $db->prepare("INSERT INTO client (naam , name, naamm, title, streetadress, city, gender, zipcode, countryid, emailadress, telephonenumber, birthday,
+occupation")
+VALUES (:name, :naam, :)
 
-$occ = filter_var($_POST["occupation"], FILTER_SANITIZE_STRING);
 
-$pw=password_hash($_POST[])
+
+
+       }
+
 
 
 
 }
+
 
 
 
@@ -94,6 +90,6 @@ $pw=password_hash($_POST[])
 
 ?>
 
-
 </body>
+
 </html>

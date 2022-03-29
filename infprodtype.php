@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 	 <title>Product laag prijs</title>
-	 <link rel="stylesheet" type="text/css" href="company.scss">  
+	 <link rel="stylesheet" type="text/css" href="company.css">  
 </head>
 <body>
 <header>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 	 <title>Info Producten</title>
-	 <link rel="stylesheet" type="text/css" href="company.scss">  
+	 <link rel="stylesheet" type="text/css" href="company.css">  
 </head>
 <body>
 <header>
@@ -35,11 +35,7 @@
         echo "<tr>".$data["prodname"]. "</td>";
         echo "<td>".$data["proddesc"]. "</td>";
         echo "<td>".$data["origincountry"]. "</td>";
-<<<<<<< HEAD
-        echo "</tr>";
-=======
         echo "<td>".$data["price"]. "</td></tr>";
->>>>>>> 0452e7a06197b17514cabf9ae5b751685b099ff5
     }
     echo "</tbody>";
     echo "</table>";
