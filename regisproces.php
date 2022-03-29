@@ -69,9 +69,9 @@ try{
        $pw=password_hash($_POST['passwrd1'], PASSWORD_DEFAULT);
 
 
-$query = $db->prepare("INSERT INTO client (surname , givenname, middleinitials, title, gender, streetadress, city, zipcode, countryid, emailadress, telephonenumber, birthday,
+$query = $db->prepare("INSERT INTO client (naam , name, naamm, title, streetadress, city, gender, zipcode, countryid, emailadress, telephonenumber, birthday,
 occupation")
-VALUES (:)
+VALUES (:name, :naam, :)
 
 
 
