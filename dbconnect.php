@@ -1,3 +1,4 @@
+
 <?php
 
 try
@@ -26,3 +27,7 @@ catch(PDOException $e)
     trigger_error($sMsg);
 
 }
+
+<?php 
+
+

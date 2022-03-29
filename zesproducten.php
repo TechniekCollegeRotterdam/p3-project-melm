@@ -7,9 +7,7 @@
 		<?php 
 		try 
 		{  
-			$query = $db->prepare("SELECT prodname, proddesc, imageref, price 
-			FROM product
-			WHERE idproduct < 7"); 
+			$query = $db->prepare("SELECT prodname, imageref, price FROM product WHERE idproduct < 7"); 
 			$query->execute();	
 			if($query->rowCount()>0) 
 			{
@@ -18,7 +16,6 @@
 					echo '<table class="table table-bordered table-hover tkop">';
 					echo '<thead>';
 					echo '<th>Product</th>'; 
-					echo '<th>Omschrijving</th>'; 
 					echo '<th>Prijs</th>';
 					echo '<th>Afbeelding</th>'; 	
 					echo '</thead>';	
@@ -26,7 +23,6 @@
 				{ 
 					echo '<tr>';
 					echo '<td>'.$rij['prodname'].'</td>'; 
-					echo '<td>'.$rij['proddesc'].'</td>'; 
 					echo '<td>'.$rij['price'].'</td>';					
 					?>
 					<td><img src="<?php echo $rij['imageref']?>" class="cover" width="150"></td>					
