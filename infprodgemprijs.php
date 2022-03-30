@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="nl">
 <head>
 <meta charset="UTF-8">
 	 <title>Product gemid prijs</title>
-	 <link rel="stylesheet" type="text/css" href="company.scss">  
+	 <link rel="stylesheet" type="text/css" href="company.css">  
 </head>
 <body>
 <header>

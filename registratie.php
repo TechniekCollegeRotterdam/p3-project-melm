@@ -6,6 +6,7 @@
        <meta http-equiv="X-UA-Compatible" content="IE=edge">
        <meta name="viewport" content="width=device-width, initial-scale=1.0">
        <title>Document</title>
+     <link rel="stylesheet" href="regisproces.php">
 </head>
 
 <body>
@@ -25,7 +26,7 @@
 
 
 
-              <form method="POST" class="registratie" id="registratie" action="registratie.php">
+              <form method="POST" class="registratie" id="registratie" action="regisproces.php">
 
                      <section class="registratie-section">
 
@@ -44,7 +45,7 @@
 
 
                             <br>
-                            <label name="naam">Tweede naam *</label>
+                            <label name="naamm">Tweede naam *</label>
                             <input type="text" placeholder="Tom">
 
 
@@ -100,12 +101,7 @@ echo '<option/>';
 
 ?>
                             </select>
-                            
-
-                                   <br>
-                                   <label name="email">Email *</label>
-                                   <input type="text" placeholder="email@gmail.com">
-
+                     
 
                                    <br>
                                    <label name="tel">Telefoonnummer *</label>
@@ -121,6 +117,17 @@ echo '<option/>';
                                    <label name="beroep">Beroep *</label>
                                    <input type="text" placeholder="beroep">
 
+                                   <br>
+                                   <label name="email">Email *</label>
+                                   <input type="text" placeholder="email@gmail.com">
+
+                                   <br>
+                                   <label for="passwrd1">wachtwoord *</label>
+                                   <input type="text" placeholder="***">
+
+                                   <br>
+                                   <label for="passwrd2">Herhaal wachtwoord *</label>
+                                   <input type="text" placeholder="***">
 
 
 
@@ -128,7 +135,7 @@ echo '<option/>';
 
                      </section>
                      <section class="submit-reset">
-                            <input type="submit" name="verzenden" value="account aanmaken">
+                            <input type="submit" name="account aanmaken" value="account aanmaken">
                             <input type="reset" name="herstel" value="opnieuw invullen">
                      </section>
 
