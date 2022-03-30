@@ -100,7 +100,7 @@ nav ul li ul li {
   position: relative;
 }
 
-nav ul li:hover ul li 
+nav ul li:hover ul li {
 	display: block;
 } 
 
