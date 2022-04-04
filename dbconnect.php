@@ -28,6 +28,6 @@ catch(PDOException $e)
 
 }
 
-<?php 
+?>
 
 
