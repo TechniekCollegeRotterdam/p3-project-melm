@@ -35,56 +35,56 @@
 
 
                             <br>
-                            <label name="name"> Achternaam *</label>
-                            <input type="text" placeholder="Doe">
+                            <label name="surname"> Achternaam *</label>
+                            <input type="text" name="surname" placeholder="Doe">
 
 
                             <br>
-                            <label name="naam">Voornaam *</label>
-                            <input type="text" placeholder="Jack">
+                            <label name="name">Voornaam *</label>
+                            <input type="text" name="name" placeholder="Jack">
 
 
                             <br>
-                            <label name="naamm">Tweede naam *</label>
-                            <input type="text" placeholder="Tom">
+                            <label for="middlename">Tweede naam *</label>
+                            <input type="text" name="middlename" placeholder="Tom">
 
 
                             <br>
-                            <label name="titel">Titel *</label>
+                            <label for="titel">Titel *</label>
                             <br>
-                            <label name="titel">Mr </label>
-                            <input type="radio" placeholder="mr">
+                            <label for="mr">Mr </label>
+                            <input type="radio" name="titel" id="mr" value="Mr" >
                             <br>
-                            <label name="titel">Mrs </label>
-                            <input type="radio" placeholder="mrs">
+                            <label for="mrs">Mrs </label>
+                            <input type="radio" name="titel" id="mrs"  value="Mrs">
                             <br>
-                            <label name="titel">Ms </label>
-                            <input type="radio" placeholder="ms">
+                            <label for="ms">Ms </label>
+                            <input type="radio" name="titel"  id="ms"  value="Ms">
 
 
                             <br>
                             <label name="Geslacht">Geslacht *</label>
                             <br>
-                            <label name="gender">Man </label>
-                            <input type="radio" placeholder="geslacht">
+                            <label for="genMale">Man </label>
+                            <input type="radio" name="gender" id="genMale"  value="male">
                             <br>
-                            <label name="gender">Vrouw </label>
-                            <input type="radio" placeholder="geslacht">
+                            <label for="genFem">Vrouw </label>
+                            <input type="radio" name="gender" id="genFem" value="female">
 
 
                             <br>
                             <label name="straatnaam">Straatnaam *</label>
-                            <input type="text" placeholder="Hooghweg">
+                            <input type="text" name="straatnaam" placeholder="Hooghweg">
 
 
                             <br>
                             <label name="stad">Stad *</label>
-                            <input type="text" placeholder="Rotterdam">
+                            <input type="text" name="stad" placeholder="Rotterdam">
 
 
                             <br>
                             <label name="postcode">Postcode *</label>
-                            <input type="text" placeholder="3030AA">
+                            <input type="text" name="postcode" placeholder="3030AA">
 
 
                             <br>
@@ -105,29 +105,29 @@ echo '<option/>';
 
                                    <br>
                                    <label name="tel">Telefoonnummer *</label>
-                                   <input type="tel" placeholder="06 99 88 77 66">
+                                   <input type="text" name="tel" placeholder="06 99 88 77 66">
 
 
                                    <br>
                                    <label name="birhtday">Geboortedatum *</label>
-                                   <input type="date" placeholder="date">
+                                   <input type="date" name="birthday" placeholder="date">
 
 
                                    <br>
                                    <label name="beroep">Beroep *</label>
-                                   <input type="text" placeholder="beroep">
+                                   <input type="text" name="beroep" placeholder="beroep">
 
                                    <br>
                                    <label name="email">Email *</label>
-                                   <input type="text" placeholder="email@gmail.com">
+                                   <input type="text" name="email" placeholder="email@gmail.com">
 
                                    <br>
                                    <label for="passwrd1">wachtwoord *</label>
-                                   <input type="text" placeholder="***">
+                                   <input type="text" name="passwrd1" placeholder="***">
 
                                    <br>
                                    <label for="passwrd2">Herhaal wachtwoord *</label>
-                                   <input type="text" placeholder="***">
+                                   <input type="text" name="passwrd2" placeholder="***">
 
 
 
