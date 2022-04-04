@@ -17,7 +17,7 @@
         
     </main>   
     
-    // verbinding maken met de database bieren
+    
     <?php
 session_start();
 require 'dbconnmelm.php';
