@@ -7,6 +7,13 @@
     <title>Login</title>
     <link rel="stylesheet" type="text/css" href="company.css">
 </head>
+<header>
+		<h1>Company</h1>
+		<!-- hieronder wordt het menu opgehaald. -->
+		<?php
+			include "nav.html";
+		?>
+	</header>
 <body>
     <form action="functions.php" method="post">
         <h2>Login</h2>
