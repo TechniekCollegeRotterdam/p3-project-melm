@@ -121,6 +121,17 @@ echo '<option/>';
                                    <label name="email">Email *</label>
                                    <input type="text" name="email" placeholder="email@gmail.com">
 
+
+<?php
+if(isset($_POST['account aanmaken'])) {
+       $check = filter_input(INPUT_POST, "tekstvak",
+       FILTER_VALIDATE_EMAIL);
+       if(!$check) {
+              echo "Fout! Invoer is geen e-mailadres!";
+       }
+}
+?>
+
                                    <br>
                                    <label for="passwrd1">wachtwoord *</label>
                                    <input type="text" name="passwrd1" placeholder="***">

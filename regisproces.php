@@ -59,13 +59,11 @@ try{
        $gn = filter_var($_POST["name"], FILTER_SANITIZE_STRING);
        $sn = filter_var($_POST["surname"], FILTER_SANITIZE_STRING);
        $initl = filter_var($_POST["middlename"], FILTER_SANITIZE_STRING);
-       $ttl = filter_var($_POST["titel"], FILTER_SANITIZE_STRING);
        $stradr = filter_var($_POST["straatnaam"], FILTER_SANITIZE_STRING);
        $cty = filter_var($_POST["stad"], FILTER_SANITIZE_STRING);
        $zip = filter_var($_POST["postcode"], FILTER_SANITIZE_STRING);
        $phone = filter_var($_POST["tel"], FILTER_SANITIZE_STRING);
        $occ = filter_var($_POST["beroep"], FILTER_SANITIZE_STRING);
-
        $pw=password_hash($_POST['passwrd1'], PASSWORD_DEFAULT);
 
 
@@ -79,15 +77,18 @@ VALUES (:surname, :name, :middlename, :titel, :geslacht, :straatnaam,
 $query->bindValue(':name', $gn);
 $query->bindValue(':surname', $sn);
 $query->bindValue(':middlename', $initl);
-$query->bindValue(':titel', $ttl);
-$query->bindValue(':gender', $_POST['gender']);
+$query->bindValue(':titel', $_POST["title"]);
+$query->bindValue(':gender', $_POST["gender"]);
 $query->bindValue(':straatnaam', $stradr);
 $query->bindValue(':city', $cty);
 $query->bindValue(':email', $eml);
 $query->bindValue(':tel', $phone);
-$query->bindValue(':birthday', $_POST['birthday']);
+$query->bindValue(':birthday', $_POST["birthday"]);
 $query->bindValue(':beroep', $occ);
 $query->bindValue(':wachtwoord', $pw);
+$query->bindvalue(':zipcode', $zip);
+$query->bindvalue(':country', $_POST["country"]);
+
 $query->execute();
 echo "Beste ".$gn." ".$sn.", uw registratie is succesvol";
 echo "Uw klantnummer is: ".$db->lastInsertId()."";
