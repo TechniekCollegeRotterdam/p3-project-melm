@@ -21,23 +21,23 @@ require_once 'dbconnect.php';
     if(isset($_POST['login'])){
    
     try{
-        $sQuery = "SELECT * FROM client WHERE clientid = :clientid";
+        $sQuery = "SELECT * FROM client WHERE idclient = :idclient";
         $oStmt = $db->prepare($sQuery);
-        $oStmt->bindValue (parameter: ':clientid', $_POST['klnr']);
+        $oStmt->bindValue (parameter: ':idclient', $_POST['klnr']);
         $oStmt->execute();
         if($oStmt->rowCount()==1){
             $rij = $oStmt->fetch(fetch_style:PDO::FETCH_ASSOC);
-            if(password_verify($_POST['klww'],$rij['password'])){
+            if(password_verify($_POST['klww'],$rij['passwrd'])){
         
         
-            $_SESSION ['clientid'] =$rij['clientid'];
-            $_SESSION ['voornaam'] =$rij ['voornaam'];
-            $_SESSION ['achternaam'] =$rij ['achternaam'];
+            $_SESSION ['idclient'] =$rij['idclient'];
+            $_SESSION ['givenname'] =$rij ['givenname'];
+            $_SESSION ['surname'] =$rij ['surname'];
             
             if($rij['beheer']=="j")
             {
                 $_SESSION['blogin']=true;
-                header(string:'Refresh: 3; url=index.php');
+                header(string:'Refresh: 3; url=admin.php');
                 echo "Login succesvol";
             }
             
@@ -45,7 +45,7 @@ require_once 'dbconnect.php';
             {
                 
                 $_SESSION['login']= true;
-                header(string: 'Refresh: 3; url=mijnpagina.php');
+                header(string: 'Refresh: 3; url=clientpagina.php');
                 echo "login succesvol";
             }
         }
