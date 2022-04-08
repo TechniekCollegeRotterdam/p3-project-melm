@@ -14,16 +14,6 @@
       echo "<br><main>";
 
 
-if(isset($_POST["account aanmaken"]))
-{
-
-       $errorVrij = false;
-echo "Helaas, registratie is niet gelukt.";
-echo "U zult eerst al (uw) gegevens moeten invullen.";
-
- exit();
-
-}
 
 
 if($errorVrij && $_POST['passwrd1']!==$_POST['passwrd2'])
@@ -56,7 +46,7 @@ if($errorVrij)
 {
 
 try{
-       $gn = filter_var($_POST["name"], FILTER_SANITIZE_STRING);
+       $gn = filter_var($_POST["givenname"], FILTER_SANITIZE_STRING);
        $sn = filter_var($_POST["surname"], FILTER_SANITIZE_STRING);
        $initl = filter_var($_POST["middlename"], FILTER_SANITIZE_STRING);
        $stradr = filter_var($_POST["straatnaam"], FILTER_SANITIZE_STRING);
@@ -65,29 +55,29 @@ try{
        $phone = filter_var($_POST["tel"], FILTER_SANITIZE_STRING);
        $occ = filter_var($_POST["beroep"], FILTER_SANITIZE_STRING);
        $pw=password_hash($_POST['passwrd1'], PASSWORD_DEFAULT);
-
+       $ttl = filter_var($_POST["titel"], FILTER_SANITIZE_STRING);
 
 $query = $db->prepare("INSERT INTO client (surname , givenname, middleinitial, title,
  gender, streetadress, city, zipcode, countryid, emailadress, telephonenumber, birthday,
 occupation, wachtwoord)
 
-VALUES (:surname, :name, :middlename, :titel, :geslacht, :straatnaam,
+VALUES (:surname, :givenname, :middlename, :titel, :gndr, :straatnaam,
  :stad, :postcode, :land, :tel, :birthday, :beroep, :email, :wachtwoord)");
 
-$query->bindValue(':name', $gn);
+$query->bindValue(':givenname', $gn);
 $query->bindValue(':surname', $sn);
 $query->bindValue(':middlename', $initl);
-$query->bindValue(':titel', $_POST["title"]);
-$query->bindValue(':gender', $_POST["gender"]);
+$query->bindValue(':titel', $_POST["titel"]);
+$query->bindValue(':gndr', $_POST["gender"]);
 $query->bindValue(':straatnaam', $stradr);
-$query->bindValue(':city', $cty);
+$query->bindValue(':stad', $cty);
 $query->bindValue(':email', $eml);
 $query->bindValue(':tel', $phone);
 $query->bindValue(':birthday', $_POST["birthday"]);
 $query->bindValue(':beroep', $occ);
 $query->bindValue(':wachtwoord', $pw);
-$query->bindvalue(':zipcode', $zip);
-$query->bindvalue(':country', $_POST["country"]);
+$query->bindvalue(':postcode', $zip);
+$query->bindvalue(':land', $_POST["country"]);
 
 $query->execute();
 echo "Beste ".$gn." ".$sn.", uw registratie is succesvol";

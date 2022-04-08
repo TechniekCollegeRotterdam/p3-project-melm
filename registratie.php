@@ -6,7 +6,7 @@
        <meta http-equiv="X-UA-Compatible" content="IE=edge">
        <meta name="viewport" content="width=device-width, initial-scale=1.0">
        <title>Document</title>
-     <link rel="stylesheet" href="regisproces.php">
+       <link rel="stylesheet" href="regisproces.php">
 </head>
 
 <body>
@@ -23,9 +23,6 @@
        </header>
        <main>
 
-
-
-
               <form method="POST" class="registratie" id="registratie" action="regisproces.php">
 
                      <section class="registratie-section">
@@ -40,8 +37,8 @@
 
 
                             <br>
-                            <label name="name">Voornaam *</label>
-                            <input type="text" name="name" placeholder="Jack">
+                            <label name="givenname">Voornaam *</label>
+                            <input type="text" name="givenname" placeholder="Jack">
 
 
                             <br>
@@ -53,23 +50,22 @@
                             <label for="titel">Titel *</label>
                             <br>
                             <label for="mr">Mr </label>
-                            <input type="radio" name="titel" id="mr" value="Mr" >
+                            <input type="radio" name="titel" id="mr" value="Mr">
                             <br>
                             <label for="mrs">Mrs </label>
-                            <input type="radio" name="titel" id="mrs"  value="Mrs">
+                            <input type="radio" name="titel" id="mrs" value="Mrs">
                             <br>
-                            <label for="ms">Ms </label>
-                            <input type="radio" name="titel"  id="ms"  value="Ms">
+                         
 
-
-                            <br>
-                            <label name="Geslacht">Geslacht *</label>
+                       
+                            <label >Geslacht *</label>
                             <br>
                             <label for="genMale">Man </label>
-                            <input type="radio" name="gender" id="genMale"  value="male">
+                            <input type="radio" name="gender" id="genMale" value="male">
                             <br>
                             <label for="genFem">Vrouw </label>
                             <input type="radio" name="gender" id="genFem" value="female">
+
 
 
                             <br>
@@ -101,28 +97,28 @@ echo '<option/>';
 
 ?>
                             </select>
-                     
-
-                                   <br>
-                                   <label name="tel">Telefoonnummer *</label>
-                                   <input type="text" name="tel" placeholder="06 99 88 77 66">
 
 
-                                   <br>
-                                   <label name="birhtday">Geboortedatum *</label>
-                                   <input type="date" name="birthday" placeholder="date">
+                            <br>
+                            <label name="tel">Telefoonnummer *</label>
+                            <input type="text" name="tel" placeholder="06 99 88 77 66">
 
 
-                                   <br>
-                                   <label name="beroep">Beroep *</label>
-                                   <input type="text" name="beroep" placeholder="beroep">
-
-                                   <br>
-                                   <label name="email">Email *</label>
-                                   <input type="text" name="email" placeholder="email@gmail.com">
+                            <br>
+                            <label name="birhtday">Geboortedatum *</label>
+                            <input type="date" name="birthday" placeholder="date">
 
 
-<?php
+                            <br>
+                            <label name="beroep">Beroep *</label>
+                            <input type="text" name="beroep" placeholder="beroep">
+
+                            <br>
+                            <label name="email">Email *</label>
+                            <input type="text" name="email" placeholder="email@gmail.com">
+
+
+                            <?php
 if(isset($_POST['account aanmaken'])) {
        $check = filter_input(INPUT_POST, "tekstvak",
        FILTER_VALIDATE_EMAIL);
@@ -131,27 +127,19 @@ if(isset($_POST['account aanmaken'])) {
        }
 }
 ?>
+                            <br>
+                            <label for="passwrd1">wachtwoord *</label>
+                            <input type="text" name="passwrd1" placeholder="***">
 
-                                   <br>
-                                   <label for="passwrd1">wachtwoord *</label>
-                                   <input type="text" name="passwrd1" placeholder="***">
-
-                                   <br>
-                                   <label for="passwrd2">Herhaal wachtwoord *</label>
-                                   <input type="text" name="passwrd2" placeholder="***">
-
-
-
-
+                            <br>
+                            <label for="passwrd2">Herhaal wachtwoord *</label>
+                            <input type="text" name="passwrd2" placeholder="***">
 
                      </section>
                      <section class="submit-reset">
-                            <input type="submit" name="account aanmaken" value="account aanmaken">
-                            <input type="reset" name="herstel" value="opnieuw invullen">
+                            <input type="submit" name="account-aanmaken" value="account-aanmaken">
+                            <input type="reset" name="herstel" value="opnieuw-invullen">
                      </section>
-
-
-
 
        </main>
        <footer>
