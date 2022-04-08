@@ -1,4 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 59dfd36a3f9443a7b23cfa497e90690bad693366
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -55,6 +59,7 @@
     echo "</table>";
     ?>
 </body>
+<<<<<<< HEAD
 </html>
 =======
 <?php
@@ -64,3 +69,6 @@
 
 ?>
 >>>>>>> 5561c4d8fb66d8dc80603e8a1f2a6c8fae97a05d
+=======
+</html>
+>>>>>>> 59dfd36a3f9443a7b23cfa497e90690bad693366
