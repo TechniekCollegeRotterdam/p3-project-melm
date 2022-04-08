@@ -15,7 +15,7 @@ include "nav.html";
 
 <body>
 <header>
-        <h1>MyCandy</h1>
+        <h1>melm</h1>
         <!--  menu opgehaald. -->
 
     </header>
