@@ -1,88 +1,31 @@
-
 <!DOCTYPE html>
-<html lang="nl">
-
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title> Inloggen Beheerder </title>
-	<link rel="stylesheet" type="text/css" href="company.scss">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="company.css">
 </head>
-
-<body>
-	<header>
-		<h1> Company </h1>
-
+<header> 
+		<h1>Company</h1>
+		<!-- hieronder wordt het menu opgehaald. -->
 		<?php
-include "nav.html";
-
-?>
+			include "nav.html";
+		?>
 	</header>
-	<main>
-		<?php
-require_once 'dbconnmelm.php';
-if (isset($_POST["loginAdmin"])){
-  try {
-			$sQuery = "SELECT 'idclient', 'surname', 'givename', 'emailadress','passwrd', 'isadmin' FROM client WHERE isadmin='yes' ";
-			$oStmt = $db -> prepare($sQuery);
-			$oStmt -> bindValue(parameter: ':idclient', $_POST['passwrd']);
-			$oStmt -> execute();
-			
-			if ($oStmt -> rowCount() == 1) {
-				$rij = $oStmt -> fetch(fetch_style: PDO::FETCH_ASSOC);
-			
-				if (password_verify($_POST['passwrd'], $rij['passwrd'])) {
-					$_SESSION['idclient'] = $rij['idclient'];
-					$_SESSION['givenname'] = $rij['givenname'];
-					$_SESSION['surname'] = $rij['surname'];
-			
-					if ($rij['isadmin'] == "yes") {
-						$_SESSION['blogin'] = true;
-						header(string: 'Refresh: 3; url=beheerhome.php');
-						echo "login succesvol, welcome highranker";
-					} 
-					// else if ($rij['admin'] == "no"){
-					//	$_SESSION['klogin'] = true;
-					//	header(string: 'Refresh:3; url=klanthome.php');
-					//	echo "You made me proud person who i wil never meet, OF COURSE NOT. Your Demoted from Admin to client. login succsesvol";}
-					}
-				
-				} else {
-					header(string: 'refresh: 4; url=inlogbeheer.php');
-	
-	
-	
-	
-					echo "<div class='container'>";
-					echo "<div class='panel panel-primary'>";
-					echo "<div class='panel-heading'>You disappointed this entire universe! Redeem yourself.</div>";
-					echo "<div class='panel-body'>YOU FREAKING DONKY! You had one job and ya blew it! Start from schratch.</div>";
-					
-						echo "</div>";
-						echo "</div>"; 
-				}
-            }
-		}
-	?>
-		<form>;
-			<method post>
-				<label for='emailaddress'>Email</label>;
-				<input type='email' name='emailAddress' class='form-control' placeholder='Email' required>;
+<body>
+    <form action="functions.php" method="post">
+        <h2>Login</h2>
+        <?php if(isset($_GET['error'])) { ?>
+         <p class="error"> <?php echo $_GET['error']; ?></p>
+       <?php } ?>
+       <label>Username/Email</label>
+       <input type="text" name="login" placeholder="Givenname/email"><br>
+       <label>Password</label>
+       <input type="password" name="pass" placeholder="Password"><br>
 
-				<label for='password'>Wachtwoord</label>;
-				<input type='password' name='password' class='form-control' placeholder='Wachtwoord' required>";
-
-		</form>;
-		<br>;
-		<form>;
-			<button class='btn' type='submit' name='button'>Log in</button>;
-		</form>;
-	</main>
+       <button type="submit">Login</button>
+    </form>
 </body>
-<?php
-    echo "<h1>Redirecting request</h1>";
-	header('Refresh: 2; url=nogniet.php');	
-    exit(); 
-
-?>
-
 </html>

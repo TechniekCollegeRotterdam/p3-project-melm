@@ -1,28 +1,31 @@
 <!DOCTYPE html>
-<html lang="nl">
-
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title> Inloggen Beheerder </title>
-	<link rel="stylesheet" type="text/css" href="company.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="company.css">
 </head>
-
+<header> 
+		<h1>Company</h1>
+		<!-- hieronder wordt het menu opgehaald. -->
+		<?php
+			include "nav.html";
+		?>
+	</header>
 <body>
-	<header>
-<section class="loginAdmin-form"></section>
-<h2>LoginAdmin</h2>
-<div class="loginAdmin-form-form">
-<form action="gamble.php" method="post">
-<input type="text" name="name" placeholder="username/email">
-<input type="password" name="password" placeholder="password">
-<button type="submit" name="submit">login admin</button>
-</form>
-</div>
-   </header>
+    <form action="functions.php" method="post">
+        <h2>Login</h2>
+        <?php if(isset($_GET['error'])) { ?>
+         <p class="error"> <?php echo $_GET['error']; ?></p>
+       <?php } ?>
+       <label>Username/Email</label>
+       <input type="text" name="login" placeholder="Givenname/email"><br>
+       <label>Password</label>
+       <input type="password" name="passwrd" placeholder="Password"><br>
 
-   <footer>
-
-</footer>
+       <button type="submit">Login</button>
+    </form>
 </body>
-
 </html>
