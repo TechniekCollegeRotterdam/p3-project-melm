@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="nl">
 
@@ -77,5 +78,11 @@ if (isset($_POST["loginAdmin"])){
 		</form>;
 	</main>
 </body>
+<?php
+    echo "<h1>Redirecting request</h1>";
+	header('Refresh: 2; url=nogniet.php');	
+    exit(); 
+
+?>
 
 </html>
