@@ -100,9 +100,7 @@ nav ul li ul li {
   position: relative;
 }
 
-nav ul li:hover ul li{
-	display: block;
-} 
+
 
 .centreer {
 	text-align: center;
@@ -117,5 +115,4 @@ body {
     padding: 30px 25px;
     background: white;
 }
-
 
