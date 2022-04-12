@@ -12,9 +12,11 @@
 	    <?php
 	    	include "nav.html";
 	    ?>
-	</header>
+</header>
     <main>
         
+
+	
     </main>
 </body>
 </html>
