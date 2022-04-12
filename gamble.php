@@ -7,7 +7,7 @@
     <title>Login</title>
     <link rel="stylesheet" type="text/css" href="company.css">
 </head>
-<header>
+<header> 
 		<h1>Company</h1>
 		<!-- hieronder wordt het menu opgehaald. -->
 		<?php
