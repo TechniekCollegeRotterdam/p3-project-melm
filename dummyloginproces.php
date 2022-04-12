@@ -34,7 +34,7 @@
             echo "<div class='panel-body'>U gaat over 3 seconden naar de startpagina</div>";
             echo "</div>";
             echo "</div>";
-            header('Refresh: 3; url=index.php');
+            header('Refresh: 3; url=admincheck.php');
         }
     ?>
     </main>

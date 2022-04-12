@@ -5,4 +5,4 @@ session_start();
 session_unset();
 session_destroy();
  
-header("location: gamble.php");
+header("location: inlogbeheer.php");

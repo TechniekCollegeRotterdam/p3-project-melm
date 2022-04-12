@@ -21,9 +21,9 @@
          <p class="error"> <?php echo $_GET['error']; ?></p>
        <?php } ?>
        <label>Username/Email</label>
-       <input type="text" name="givenname" placeholder="Givenname/email"><br>
+       <input type="text" name="login" placeholder="Givenname/email"><br>
        <label>Password</label>
-       <input type="password" name="passwrd" placeholder="Passwrd"><br>
+       <input type="password" name="pass" placeholder="Password"><br>
 
        <button type="submit">Login</button>
     </form>
