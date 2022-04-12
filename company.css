@@ -100,10 +100,7 @@ nav ul li ul li {
   position: relative;
 }
 
-nav ul li:hover ul li {
-  display: block;
-}
-/*# sourceMappingURL=company.css.map */
+
 
 .centreer {
 	text-align: center;

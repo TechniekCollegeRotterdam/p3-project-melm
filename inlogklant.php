@@ -1,63 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="nl">
 
 <head>
-    <meta charset="utf-8">
-    <title>Login</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css%22%3E
-    <link rel="stylesheet" href="company.css">
+  <meta charset="UTF-8">
+  <title>Login-Klant</title>
+  <link rel="stylesheet" type="text/css" href="company.css">
 </head>
-<header>
+<?php
+include "nav.html";
 
-    <?php include "nav.html";?>
+?>
 
-</header>
+
 
 <body>
-   
-<?php
+<header>
+        <h1>melm</h1>
+        <!--  menu opgehalen. -->
 
-require_once 'dbconnect.php';
-    if(isset($_POST['login'])){
-   
-    try{
-        $sQuery = "SELECT * FROM client WHERE clientid = :clientid";
-        $oStmt = $db->prepare($sQuery);
-        $oStmt->bindValue (parameter: ':clientid', $_POST['klnr']);
-        $oStmt->execute();
-        if($oStmt->rowCount()==1){
-            $rij = $oStmt->fetch(fetch_style:PDO::FETCH_ASSOC);
-            if(password_verify($_POST['klww'],$rij['password'])){
-        
-        
-            $_SESSION ['clientid'] =$rij['clientid'];
-            $_SESSION ['voornaam'] =$rij ['voornaam'];
-            $_SESSION ['achternaam'] =$rij ['achternaam'];
-            
-            if($rij['beheer']=="j")
-            {
-                $_SESSION['blogin']=true;
-                header(string:'Refresh: 3; url=index.php');
-                echo "Login succesvol";
-            }
-            
-            else 
-            {
-                
-                $_SESSION['login']= true;
-                header(string: 'Refresh: 3; url=mijnpagina.php');
-                echo "login succesvol";
-            }
-        }
-    }
-}
-catch{
-    
-}
-    }
-?>
+    </header>
+  <main>
+
+  <form method="post" action="inlogproces_klant.php">
+  <table class="loginTable">
+     <tr>
+      <th>KLANT  LOGIN</th>
+     </tr>
+     <tr>
+      <td>
+        <label class="firstLabel">Username:</label>
+        <input type="text" name="userid" id="userid" value="" autocomplete="off" />
+      </td>
+     </tr>
+     <tr>
+      <td><label>Password:</label>
+        <input type="password" name="password" id="password" value="" autocomplete="off" /></td>
+     </tr>
+     <tr>
+      <td>
+         <input type="submit" name="submitBtnLogin" id="submitBtnLogin" value="Login" />
+      </td>
+     </tr>
+  </table>
+</form>
+
+  </main>
 
 
 </body>
 
-</html>
+
