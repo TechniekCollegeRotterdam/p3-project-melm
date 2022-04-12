@@ -1,22 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="nl">
 
 <head>
-    <meta charset="utf-8">
-    <title>Login</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css%22%3E
-    <link rel="stylesheet" href="company.css">
+  <meta charset="UTF-8">
+  <title>Login-Klant</title>
+  <link rel="stylesheet" type="text/css" href="company.css">
 </head>
-<header>
-
-    <?php include "nav.html";?>
-
-</header>
-
-<body>
-   
 <?php
+include "nav.html";
 
+?>
+
+
+
+<<<<<<< HEAD
 require_once 'dbconnect.php';
     if(isset($_POST['login'])){
    
@@ -56,8 +53,42 @@ catch{
 }
     }
 ?>
+=======
+<body>
+<header>
+        <h1>melm</h1>
+        <!--  menu opgehalen. -->
+
+    </header>
+  <main>
+
+  <form method="post" action="inlogproces_klant.php">
+  <table class="loginTable">
+     <tr>
+      <th>KLANT  LOGIN</th>
+     </tr>
+     <tr>
+      <td>
+        <label class="firstLabel">Username:</label>
+        <input type="text" name="userid" id="userid" value="" autocomplete="off" />
+      </td>
+     </tr>
+     <tr>
+      <td><label>Password:</label>
+        <input type="password" name="password" id="password" value="" autocomplete="off" /></td>
+     </tr>
+     <tr>
+      <td>
+         <input type="submit" name="submitBtnLogin" id="submitBtnLogin" value="Login" />
+      </td>
+     </tr>
+  </table>
+</form>
+
+  </main>
+>>>>>>> 8bd960a0cb6d99cc22cfa2259d5a2c638afb187d
 
 
 </body>
 
-</html>
+
