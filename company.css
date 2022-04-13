@@ -94,6 +94,9 @@ nav ul li a {
 nav ul li:hover {
   color: antiquewhite;
 }
+nav ul li:hover ul li {
+ display:block;
+}
 
 nav ul li ul li {
   display: none;
