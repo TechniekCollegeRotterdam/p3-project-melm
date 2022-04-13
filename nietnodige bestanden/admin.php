@@ -32,7 +32,8 @@ if(isset($_SESSION['idclient']) && isset($_SESSION['givenname'])) {
 
 		</section>
 	</main>
-
+ <a href="add.php" >
+Nieuwe product toevoegen</a>
 </body>
 
 </html>

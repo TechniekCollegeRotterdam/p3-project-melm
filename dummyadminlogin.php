@@ -22,7 +22,7 @@
         require_once("dbconnect.php");
 
         // Geselecteerde gegevens ophalen uit de tabel client
-        $query = $db->prepare("SELECT idclient, givenname, surname, city, isadmin 
+        $query = $db->prepare("SELECT idclient, surname, givenname, city, isadmin 
                 FROM client WHERE isadmin = 'yes'");//AND passwrd ='$2y$10$OQV1.K/z' AND (emailadress = OR givenname = )
         $query->execute();
         $resultq = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -37,8 +37,8 @@
             echo "<form method='POST' action='dummyloginproces.php'>";
             echo "<tr>";
             echo "<td>".$data["idclient"]."<input type='hidden' name='idclient' value =".$data["idclient"]."></td>";
+            echo "<td>".$data["surname"]."<input type='hidden' name='surname' value =".$data["surname"]."></td>"; 
             echo "<td>".$data["givenname"]."<input type='hidden' name='givenname' value =".$data["givenname"]."></td>";
-            echo "<td>".$data["surname"]."<input type='hidden' name='surname' value =".$data["surname"]."></td>";
             echo "<td>".$data["city"]."</td>";
             echo "<td>".$data["isadmin"]."</td>";
             echo "<td><input type='submit' name='LogInAdmin' value='Inloggen'></td>";
