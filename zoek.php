@@ -33,9 +33,16 @@
 		</p>
 		<p>
             <h2>Zoek producten op naam</h2>
-            <form action="zkproductnaam.php"></form>
-
+            <form action="zkproductnaam.php">
+				<label>Zoeken op naam</label>
+				<input type="text" name="name"/>
+				<input type="submit" name="submit" value="zoeken">
+			</form>
+			
 		</p>
+
+
+
 	</main>
 	
 </body>
