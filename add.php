@@ -30,11 +30,6 @@ if(isset($_SESSION['idclient']) && isset($_SESSION['givenname'])) {
                 <form action="create.php" method="post">
                     <div class="form-row">
                         <div class="form-group col-md-4">
-                            <label for="idproduct" class="col-form-label">idproduct</label>
-                            <input type="number" class="form-control" id="idproduct" name="idproduct" placeholder="idproduct"
-                            required>
-                        </div>
-                        <div class="form-group col-md-4">
                             <label for="typeid" class="col-form-label">typeid</label>
                             <input type="number" class="form-control" id="typeid" name="typeid" placeholder="typeid"
                             required>
