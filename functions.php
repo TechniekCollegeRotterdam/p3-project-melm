@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "dbconngamble.php";
+include "dbconnect.php";
 
 if(isset($_POST['givenname']) && isset($_POST['passwrd'])){
     function validate($data) {
