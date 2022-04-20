@@ -143,7 +143,7 @@ if(isset($_POST['account aanmaken'])) {
 
        </main>
        <footer>
-
+\
        </footer>
 </body>
 
