@@ -129,11 +129,11 @@ if(isset($_POST['account aanmaken'])) {
 ?>
                             <br>
                             <label for="passwrd1">wachtwoord *</label>
-                            <input type="text" name="passwrd1" placeholder="***">
+                            <input type="password" name="passwrd1" placeholder="***">
 
                             <br>
                             <label for="passwrd2">Herhaal wachtwoord *</label>
-                            <input type="text" name="passwrd2" placeholder="***">
+                            <input type="password" name="passwrd2" placeholder="***">
 
                      </section>
                      <section class="submit-reset">
