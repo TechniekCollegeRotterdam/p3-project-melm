@@ -62,7 +62,7 @@ $query = $db->prepare("INSERT INTO client (surname , givenname, middleinitial, t
 occupation, wachtwoord)
 
 VALUES (:surname, :givenname, :middlename, :titel, :gndr, :straatnaam,
- :stad, :postcode, :land, :tel, :birthday, :beroep, :email, :wachtwoord)");
+ :stad, :postcode, :land, :email, :tel, :birthday, :beroep, :wachtwoord)");
 
 $query->bindValue(':givenname', $gn);
 $query->bindValue(':surname', $sn);
