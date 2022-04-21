@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 59dfd36a3f9443a7b23cfa497e90690bad693366
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -18,7 +14,7 @@
 	    ?>
 	</header>
     <main>
-       <?php
+    <?php
     // verbinding maken met de database bieren
     require_once("dbconnmelm.php");
 
