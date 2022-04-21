@@ -36,7 +36,7 @@
 
     // alle gegevens uit kroeg op het scherm tonen
     foreach ($resultq as $data) {
-        echo "<tr>".$data["prodname"]. "</td>";
+        echo "<tr><td>".$data["prodname"]. "</td>";
         echo "<td>".$data["proddesc"]. "</td>";
         echo "<td>".$data["origincountry"]. "</td>";
         echo "<td>".$data["price"]. "</td></tr>";
@@ -48,15 +48,10 @@
 
 </body>
 </html>
-<<<<<<< HEAD
-=======
+
 <?php
     echo "<h1>Redirecting request</h1>";
 	header('Refresh: 1; url=nogniet.php');	
     exit(); 
 
 ?>
->>>>>>> 5561c4d8fb66d8dc80603e8a1f2a6c8fae97a05d
-=======
-
->>>>>>> 59dfd36a3f9443a7b23cfa497e90690bad693366
