@@ -21,7 +21,7 @@
     require_once("dbconnmelm.php");
 
     // alle gegevens ophalen uit de tabel bier0
-    $query = $db->prepare("SELECT prodname, idproduct, typeid, idtype, name FROM product, type");
+    $query = $db->prepare("SELECT prodname, idproduct, typeid, idtype, name FROM product, types");
     $query->execute();
     $resultq = $query->fetchAll(PDO::FETCH_ASSOC);
 
