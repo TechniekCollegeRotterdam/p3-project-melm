@@ -8,7 +8,7 @@ if(isset($_SESSION['idclient']) && isset($_SESSION['givenname'])) {
 
 <head>
     <meta charset="UTF-8">
-    <title>Verwijderen producten</title>
+    <title>Verwijderen klant</title>
     <link rel="stylesheet" type="text/css" href="company.css">
 </head>
 
