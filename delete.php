@@ -1,28 +1,26 @@
-
-
 <!DOCTYPE html>
 <html lang="nl">
 
 <head>
-	<meta charset="UTF-8">
-	<title>Verwijderen producten</title>
-	<link rel="stylesheet" type="text/css" href="company.css">
+    <meta charset="UTF-8">
+    <title>Verwijderen producten</title>
+    <link rel="stylesheet" type="text/css" href="company.css">
 </head>
 
 <body>
-	<header>
-		<h1>Verwijderen producten</h1>
+    <header>
+        <h1>Verwijderen producten</h1>
 
-		<?php
+        <?php
 			include "navbeheer.html";
 		?>
-	</header>
-	<br>
-	<br>
-	<br>
-	<br>
+    </header>
+    <br>
+    <br>
+    <br>
+    <br>
 
-	<?php
+    <?php
     // verbinding maken met de database bieren
     session_start();
     if(isset($_POST["delete"])){
@@ -66,7 +64,7 @@ else {
 }
     
    
-   ?>      
+   ?>
 
 </body>
 

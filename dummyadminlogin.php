@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="company.css">  
+    <link rel="stylesheet" type="text/css" href="company.css">
     <title>Alle beheerders</title>
 </head>
+
 <body>
     <header>
-		<h1>Company</h1>
-	    <!-- hieronder wordt het menu opgehaald. -->
-	    <?php
+        <h1>Company</h1>
+        <!-- hieronder wordt het menu opgehaald. -->
+        <?php
             session_start();
             include "nav.html";
 	    ?>
-	</header>
+    </header>
 
     <main>
-    <?php
+        <?php
         // Verbinding maken met de database 
         require_once("dbconnect.php");
 
@@ -49,4 +51,5 @@
     ?>
     </main>
 </body>
+
 </html>

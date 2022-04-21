@@ -7,25 +7,25 @@ if(isset($_SESSION['idclient']) && isset($_SESSION['givenname'])) {
 <html lang="nl">
 
 <head>
-	<meta charset="UTF-8">
-	<title>Verwijderen producten</title>
-	<link rel="stylesheet" type="text/css" href="company.css">
+    <meta charset="UTF-8">
+    <title>Verwijderen producten</title>
+    <link rel="stylesheet" type="text/css" href="company.css">
 </head>
 
 <body>
-	<header>
-		<h1>Verwijderen klant</h1>
+    <header>
+        <h1>Verwijderen klant</h1>
 
-		<?php
+        <?php
 			include "navbeheer.html";
 		?>
-	</header>
-	<br>
-	<br>
-	<br>
-	<br>
+    </header>
+    <br>
+    <br>
+    <br>
+    <br>
 
-	<?php
+    <?php
     // verbinding maken met de database bieren
     require_once("dbconnmelm.php");
 
@@ -54,7 +54,7 @@ if(isset($_SESSION['idclient']) && isset($_SESSION['givenname'])) {
     echo "</tbody>";
     echo "</table>";
 
-    ?>      
+    ?>
 
 </body>
 
