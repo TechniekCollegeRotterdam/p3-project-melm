@@ -16,7 +16,7 @@
 
     // alle gegevens uit kroeg op het scherm tonen
     foreach ($resultq as $data) {
-        echo "<form method='POST' action='delete.php'>";
+        echo "<form method='POST' action='deletee.php'>";
 	    echo "<tr>";
         echo "<td>".$data["idclient"]."<input type='hidden' name='idclient' value ='".$data["idclient"]."'></td>";
         echo "<td>".$data["surname"]."<input type='hidden' name='surname' value =".$data["surname"]."></td>"; 
