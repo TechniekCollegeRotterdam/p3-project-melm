@@ -1,4 +1,4 @@
-<h1>Verwijderen klant</h1>
+
 
 <?php
     // verbinding maken met de database bieren
@@ -29,4 +29,4 @@
     echo "</tbody>";
     echo "</table>";
 
-    ?>      
+    ?>    

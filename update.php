@@ -6,15 +6,17 @@ if($_POST)
 {
         require_once "dbconnmelm.php";
         $typeid = filter_var($_POST["typeid"], FILTER_SANITIZE_STRING);
-        $query = $db->prepare("SELECT * FROM types WHERE idtype = :typeid");
+        $query = $db->prepare("SELECT idtype FROM types WHERE idtype = :typeid");
         $query->bindValue(':typeid', $typeid);
         $query->execute();
+        $result = $query->fetchALL(PDO::FETCH_ASSOC);
         if($query->rowCount() <> 1 )
         {
                $_POST = False;
                echo "Geen matchend id.";
                
        }
+       
 }
 
 if($_POST) {
@@ -44,17 +46,17 @@ if($_POST) {
         $stmt->bindParam(":idproduct", $idproduct);
         $stmt->execute();
         if($stmt->rowCount()) {
-            header("location: edit.php?id=".$idproduct."status=update_done");
+            header("location: chn.php?idproduct=".$idproduct."status=update_done");
             exit();
         }
-        header("location: edit.php?id=".$idproduct."status=fail_update");
+        header("location: edit.php?idproduct=".$idproduct."status=fail_update");
         exit();
     } catch (Exception $e) {
        echo "error ". $e->getMessage();
        exit();
     }
 } else {
-    header("location: edit.php?id=".$idproduct."fail_update");
+    header("location: edit.php?idproduct=".$idproduct."fail_update");
     exit();
 }
 ?>
