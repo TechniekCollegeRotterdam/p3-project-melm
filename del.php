@@ -65,10 +65,8 @@ if(isset($_SESSION['idclient']) && isset($_SESSION['givenname'])) {
 							<td><?=$product['prodname']?></td>
 							<td><?=$product['origincountry']?></td>
 							<td>
-								<a href="#" class="btn btn-sm btn-danger" data-toggle="modal"
-									data-target="#modal-delete-<?= $product['idproduct'] ?>">
-									delete<i class="fa fa-trash"></i></a>
-								<?php include("modal.php") ?>
+								<a href="delt.php?idproduct=<?=$product['idproduct']?>" class="btn btn-sm btn-danger" >delete<i class="fa fa-trash"></i></a>
+							
 							</td>
 						</tr>
 						<?php endforeach ?>

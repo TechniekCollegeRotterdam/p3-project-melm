@@ -18,7 +18,16 @@ if (!$stmt->rowCount()) {
 }
 $product = $stmt ->fetch();
 
+
+
 ?>
+
+<?php 
+$query = $db->prepare("SELECT idtype FROM types ");
+$query->execute();
+$result = $query->fetchAll(PDO::FETCH_ASSOC); 
+?>
+
 <!DOCTYPE html>
 <html lang="nl">
 
@@ -40,12 +49,36 @@ $product = $stmt ->fetch();
             </div>
             <div class="card-body">
                 <form action="update.php" method="post">
-                    <input type="hiddent" name="idproduct"  value="<?= $product['idproduct'] ?>"> Warning you can not change the id of the product.
+                idproduct <input type="hiddent" name="idproduct"  value="<?= $product['idproduct'] ?>"> Warning you can not change the id of the product.
                     <div class="form-row">
                         <div class="form-group col-md-4">
-                            <label for="typeid" class="col-form-label">typeid</label>
-                            <input type="number" class="form-control" id="typeid" name="typeid" placeholder="typeid"
-                            required value="<?= $product['typeid']?>">Warning, only change the typeid to a existing one from 1 to 7 no 8+.
+                        <tr>
+                        <th>typeid</th>
+                <td><?= $product['typeid'] ?></td>
+                </tr>
+                            
+                            <select class="form-control"  id="typeid" name="typeid" required>
+
+                <?php
+
+                    foreach($result as $row)
+
+                    {
+
+                        $fieldtype = '<option value="'.$row['idtype'].'" ';
+                        if ($row['idtype'] == $product['typeid']) 
+                        {$fieldtype = $fieldtype . 'selected';}
+                        $fieldtype = $fieldtype .'> ';
+                        echo $fieldtype;
+                        echo $row['idtype'];
+                        echo '</option>';
+                    
+
+                    }  
+
+                ?>
+
+                </select>
                         <div class="form-group col-md-4">
                             <label for="stockquantity" class="col-form-label">aantal</label>
                             <input type="number" class="form-control" id="stockquantity" name="stockquantity" placeholder="stockquantity"
