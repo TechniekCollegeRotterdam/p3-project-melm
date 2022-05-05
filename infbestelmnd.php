@@ -1,6 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overzicht bestellingen</title>
+    <link rel="stylesheet" href="company.css">
+</head>
+<body>
+<header class="header-info">
+		<h1>Company</h1>
+		<!-- hieronder wordt het menu opgehaald. -->
+		<?php
+			include "nav.html";
+		?>
+	</header>
+ 
+    <main class="main-info">
 <?php
-    echo "<h1>Redirecting request</h1>";
-	header('Refresh: 1; url=nogniet.php');	
-    exit(); 
 
-?>
+//een overzicht van categorieën met ALLE bijbehorende producten.
+
+require_once("dbconnect.php");
+
+$query = $db-> prepare("SELECT idpurchase, purchasedate FROM purchase WHERE purchasedate = '2022-02-22' ");
+$query->execute();
+
+$resultq = $query->fetchALL(PDO::FETCH_ASSOC);
+
+
+foreach ($resultq as $data){
+    echo " Product: " . $data["idpurchase"];
+    echo " Datum " . $data["purchasedate"];
+    echo "<br>";
+  
+}
+
+echo"</tbody>";
+echo"</table>";
+    ?> 
+</main>
+</body>
+</html>
