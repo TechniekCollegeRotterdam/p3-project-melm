@@ -21,24 +21,42 @@ if(isset($_SESSION['idclient']) && isset($_SESSION['givenname'])) {
 		?>
 	</header>
 
+<br>
+<br>
+<br>
+
+	
 <?php 
 
 try {
-$db = new PDO("mysql:host=localhost;dbname=melm",
- "root", "root");
+	require_once("dbconnmelm.php");
 
- $query = $db->prepare("SELECT * FROM type");
+ $query = $db->prepare("SELECT * FROM types");
  $query->execute();
- $result = $query->getchAll (PDO::FETCH_ASSOC);
+ $result = $query->fetchAll (PDO::FETCH_ASSOC);
+
+
+ echo "<table>";
+ echo "<thead><th>idtype</th><th>name</th></thead>";
+ echo "<tbody>";
+
 
  foreach($result as &$data) {
-        echo "<a href='update.php?id=".$data['id']."'>";
-        echo $data["merk"] . " " . $data["type"];
-        echo "</a>";
-        echo "<br>";
+	 echo "<form method='POST' action='update.php'>";
+	 echo "<tr>";
+     
+	 echo "<td>".$data["idtype"]."<input type='hidden' name='idtype' value ='".$data["idtype"]."'></td>";
+        echo "<td>".$data["names"]."<input type='hidden' name='names' value =".$data["names"]."></td>"; 
+        echo "<td><input type='submit' name='wijzigen' value='wijzigen'></td>";
+        echo "</tr></form>";
  }
+ echo "</tbody>";
+ echo "</table>";
+
+
+
 }  catch(PDOExeption $e) {
-       die("Error!: " . $e->getMessage());
+       die("Error!!! : " . $e->getMessage());
        
 }
 
