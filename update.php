@@ -33,15 +33,11 @@ catch(PDOExeption $e) {
 	}
 if(isset($_POST['opslaan'])) {
 	
-
-	$type = filter_input($_POST, "idtype", FILTER_VALIDATE_INT);
-       $name = filter_input($_POST, "names", FILTER_SANITIZE_STRING);
-
+       $name = filter_input($_POST["names"] , FILTER_SANITIZE_STRING);
 	$query = $db->prepare("UPDATE types SET names = :names WHERE idtype = :idtype");
 
       
 	$query->bindValue("names", $name);
-       $query->bindValue("idtype", $type);
 	$query->bindValue("idtype", $_POST['idtype']);
 	if ($query->execute()) {
 		echo "De nieuwe gegevens zijn toegevoegd.";
@@ -54,7 +50,6 @@ if(isset($_POST['opslaan'])) {
  $query->bindValue("idtype", $_POST['idtype']);
  $query->execute();
  $result = $query->fetch(PDO::FETCH_ASSOC);
-
 
 $type = $result['idtype'];
 $name = $result['names'];
@@ -70,7 +65,7 @@ $name = $result['names'];
 
 <form method="post" action="">
 	<label>id type</label>
-	<input type="text" name="idtype" value="<?php echo $type; ?>">
+	<input type="text" name="idtype" value="<?php echo $type; ?>" readonly>
 	<br>
 
 	<label>name</label>
