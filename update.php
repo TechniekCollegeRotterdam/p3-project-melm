@@ -36,7 +36,7 @@ if(isset($_POST['opslaan'])) {
        $name = filter_input($_POST["names"] , FILTER_SANITIZE_STRING);
 	$query = $db->prepare("UPDATE types SET names = :names WHERE idtype = :idtype");
 
-      
+	
 	$query->bindValue("names", $name);
 	$query->bindValue("idtype", $_POST['idtype']);
 	if ($query->execute()) {
