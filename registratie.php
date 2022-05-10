@@ -14,7 +14,7 @@
               <h1 class="Registratie">Registratie</h1>
               <?php
 	
-	    require_once "dbconnect.php";
+	    require_once "dbconnmelm.php";
            $query = $db->prepare("SELECT * FROM country");
            $query->execute();
            $result=$query->fetchAll(PDO::FETCH_ASSOC);
