@@ -57,8 +57,8 @@ trigger_error($sMsg);
 
 
 }
-    }
-else {
+    
+} else {
     header("location: index.php");
     exit();
 }

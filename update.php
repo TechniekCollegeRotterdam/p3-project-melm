@@ -33,13 +33,16 @@ catch(PDOExeption $e) {
 	}
 if(isset($_POST['opslaan'])) {
 	
-       $name = filter_input($_POST["names"] , FILTER_SANITIZE_STRING);
+       $name = filter_var($_POST["names"] , FILTER_SANITIZE_STRING);
 	$query = $db->prepare("UPDATE types SET names = :names WHERE idtype = :idtype");
 
 	
 	$query->bindValue("names", $name);
 	$query->bindValue("idtype", $_POST['idtype']);
 	if ($query->execute()) {
+		echo "<br>";
+		echo "<br>";
+		echo "<br>";
 		echo "De nieuwe gegevens zijn toegevoegd.";
 	} else {
 		echo "Er is een fout opgetreden!";
@@ -71,6 +74,16 @@ $name = $result['names'];
 
 	<input type="submit" name="opslaan" value="opslaan">
 </form>
+
+<?php
+}
+
+?>
+
+<br>
+<br>
+<br>
+
 
 
 
