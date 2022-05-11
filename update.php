@@ -54,9 +54,6 @@ if(isset($_POST['opslaan'])) {
 $type = $result['idtype'];
 $name = $result['names'];
 
-
-}
-
 ?>
 
 <br>
